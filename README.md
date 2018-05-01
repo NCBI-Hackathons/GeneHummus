@@ -1,2 +1,3 @@
 # GeneHummus
-An Automated Pipeline to Determine Genomic Differences During Plant Domestication (using the *Cicer* genus as an example)
+
+An Automated Pipeline to Classify Gene Families based on Protein Domain Organization using Auxin Response Factors in Legumes as an Example

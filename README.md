@@ -4,3 +4,8 @@ An Automated Pipeline to Classify Gene Families based on Protein Domain Organiza
 Legumes as an Example
 
 ![](workflow.png)
+
+
+Phylogenetic analysis  
+
+![](PhyloIO_Tree.svg)

@@ -47,4 +47,5 @@ Questions
 
 ### Data Interpretation: 
 The vast majority of ARF legume proteins were present in the last common ancestor before the species diverged from each other.     
+  
 Should we expect the **same evolutionary history with other gene family**? For example, resistance-like genes? Shouldn't we expect more species-specific clades meaning the certains challenges that each species has met during its evolutionary development?

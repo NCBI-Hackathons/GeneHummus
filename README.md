@@ -33,7 +33,7 @@ Question
 * Each cluster is made of a number of subclases or subgroups.   
 * Vast majority of subclases are multi-species
 
-![](treeARF.png)
+![](figures/treeARF.png)
 
 
 

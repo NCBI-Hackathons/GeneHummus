@@ -18,3 +18,6 @@ An Automated Pipeline to Classify Gene Families based on Protein Domain Organiza
 
 * Ancestral Proteins were Present in the Last common ancestor before the species diverged from each other.   
 * Single Exception: A XXX subclass with no homology to any other legume.   
+
+
+Should we expect the **same evolutionary history with other gene family**? For example, resistance-like genes? Shouldn't we expect more species-specific clades meaning the certains challenges that each species has met during its evolutionary development?

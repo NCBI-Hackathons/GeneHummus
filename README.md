@@ -35,7 +35,7 @@ Question
 
 ![](figures/treeARF.png)
 
-Only 1 subclass in cluster II is made of proteins from the genus **Arachis** with no homology to any other genera. This subclass is well-supported by bootstrap values. 
+A **subclass in cluster II is made only** of proteins from the genus ***Arachis*** with no homology to any other genera. This subclass is well-supported by bootstrap values. 
 
 ![](figures/arachisTree.png)
 

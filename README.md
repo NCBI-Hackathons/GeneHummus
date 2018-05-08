@@ -35,14 +35,16 @@ Question
 
 ![](figures/treeARF.png)
 
+Only 1 subclass in cluster II is made of proteins from the genus **Arachis** with no homology to any other genera. This subclass is well-supported by bootstrap values. 
+
+![](figures/arachisTree.png)
 
 
 Question  
 * How many sister pairs are between two different species?   
 * How many sister pairs are between the same species?   
 * Proteins belonging the same group within a species, do they locate on the same chromosome?  
-* Ancestral Proteins were Present in the Last common ancestor before the species diverged from each other.   
-* Single Exception: A XXX subclass with no homology to any other legume.   
 
-
+### Data Interpretation: 
+The vast majority of ARF legume proteins were present in the last common ancestor before the species diverged from each other.     
 Should we expect the **same evolutionary history with other gene family**? For example, resistance-like genes? Shouldn't we expect more species-specific clades meaning the certains challenges that each species has met during its evolutionary development?

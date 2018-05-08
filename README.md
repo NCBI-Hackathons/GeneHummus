@@ -4,7 +4,8 @@ An Automated Pipeline to Classify Gene Families based on Protein Domain Organiza
 
 ## Workflow
 
-![](workflow.png)
+![](figures/workflow.png)
+# ![](aworkflow.png)
 
 
 In total, we have identified **350 Auxin Response Factor protein** sequences across **10 different Legume species**. 

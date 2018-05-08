@@ -19,7 +19,7 @@ In total, we have identified **350 Auxin Response Factor protein** sequences acr
 | *Cajanus cajan* |  33
 | *Vigna angularis* | 30
 | *Vigna radiata* | 29
-| *Cicer arietinum* | 24
+| ***Cicer arietinum*** | **24**
 | *Medicago truncatula* | 23 
 | *Phaseolus vulgaris* | 21
 

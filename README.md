@@ -40,7 +40,7 @@ Only 1 subclass in cluster II is made of proteins from the genus **Arachis** wit
 ![](figures/arachisTree.png)
 
 
-Question  
+Questions  
 * How many sister pairs are between two different species?   
 * How many sister pairs are between the same species?   
 * Proteins belonging the same group within a species, do they locate on the same chromosome?  

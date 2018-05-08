@@ -1,6 +1,6 @@
 # GeneHummus
 
-An Automated Pipeline to Classify Gene Families based on Protein Domain Organization using Auxin Response Factors in **chickpea** and other Legumes as an Example
+An Automated Pipeline to Study Plant Gene Families based on Protein Domain Organization using Auxin Response Factors in **chickpea** and other Legumes as an Example
 
 ## Workflow
 

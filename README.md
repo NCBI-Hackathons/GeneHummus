@@ -7,6 +7,22 @@ An Automated Pipeline to Classify Gene Families based on Protein Domain Organiza
 ![](workflow.png)
 
 
+In total, we have identified **350 Auxin Response Factor protein** sequences across **10 different Legume species**. 
+
+| Species  | # ARF |
+|---------|----------------|
+| *Glycine max* | 61     |
+| *Lupinus angustifolius* | 49 |
+| *Arachis ipaensis* | 41
+| *Arachis duranensis* | 39
+| *Cajanus cajan* |  33
+| *Vigna angularis* | 30
+| *Vigna radiata* | 29
+| *Cicer arietinum* | 24
+| *Medicago truncatula* | 23 
+| *Phaseolus vulgaris* | 21
+
+
 ## Phylogeny  
 
 ![](PhyloIO_Tree.svg)

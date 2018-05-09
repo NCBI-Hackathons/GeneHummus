@@ -1,12 +1,22 @@
 # GeneHummus
 
-An Automated Pipeline to Study Plant Gene Families based on Protein Domain Organization using Auxin Response Factors in **chickpea** and other Legumes as an Example
+An Automated Pipeline to Study **Plant Gene Families based on Protein Domain Organization** using Auxin Response Factors in **chickpea** and other Legumes as an Example.
+
+ - [Workflow](#workflow)
+ - [CDART](#conserved-domain-architecture)
+ - [Phylogeny](#phylogeny)
+ - [Expression]()
+
+
+<br>
 
 ## Workflow
 
 ![](figures/workflow.png)
 # ![](aworkflow.png)
 
+
+## Conserved Domain Architecture  
 
 In total, we have identified **350 Auxin Response Factor protein** sequences across **10 different Legume species**. 
 

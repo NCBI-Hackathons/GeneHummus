@@ -8,8 +8,13 @@ output:
 ---
 
 
-
-In this file we will study the frecuency of 24 auxin receptor factors (ARF) from the root tissues of the plant  chickpea in 4 SRA libraries. This tutorial will analyze the MagicBlast table output.  
+Our objective in the GeneHummmus Project is to **build an automated pipeline** that combines the accuracy of manual curation with programmatic efficiency **to identify and characterize plant gene families**.  
+  
+As **case study** we focused on the **Auxin Response Factors (ARFs)**. ARFs are regulators of plant growth and developmental processes in plants. ARFs are also **activated in response to biotic** (pests, diseases, virus ...) **and abiotic challenges** (heat, drought, ...). **Understanding which genes are activated in which conditions will help selective bredding programs**.  
+    
+Here, our starting point is a dataset made of the 24 ARF genes from the chickpea genome. We run [Magic-BLAST](https://ncbi.github.io/magicblast/) against 4 SRA libraries, representing two chickpea genotypes (susceptible and drought tolerant) under two different conditions (control roots, roots under drought). 
+  
+This tutorial will analyze the Magic-Blast table output.  
 
 * [SRR5927129](https://www.ncbi.nlm.nih.gov/sra/?term=SRR5927129). Susceptible_Control
 * [SRR5927130](https://www.ncbi.nlm.nih.gov/sra/?term=SRR5927130). Susceptible_Drought

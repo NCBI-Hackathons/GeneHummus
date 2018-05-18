@@ -81,7 +81,7 @@ Plot the percentage Identity
 hist(df$X..identity, col = 2)
 ```
 
-![](CUNY_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](figures/unnamed-chunk-7-1.png)<!-- -->
 
 We could filter some rows. For example, say we want to keep only those hits with Identity > 99%. How many hits will we remove? 
 

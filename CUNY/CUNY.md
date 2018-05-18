@@ -131,7 +131,7 @@ boxplot(df2$Count~df2$Query, outline = FALSE,
         main = "Sequence Counts per run", col = c("grey80", "grey50", "grey80", "grey50"))
 ```
 
-![](CUNY_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](figures/unnamed-chunk-11-1.png)<!-- -->
 <br>
 We see how drought conditions has an effect on the presence of the ARF proteins in both genotypes. 
 
@@ -210,7 +210,7 @@ lines(density(df_wide$SRR5927133), col = 3)
 lines(density(df_wide$SRR5927134), col = 4)
 ```
 
-![](CUNY_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](figures/unnamed-chunk-14-1.png)<!-- -->
 
 
 ## QQ plot
@@ -225,7 +225,7 @@ qqplot(df_wide$SRR5927129, df_wide$SRR5927133, pch = 19,
 abline(c(0,1), col=2) # 45degree line
 ```
 
-![](CUNY_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
+![](figures/unnamed-chunk-15-1.png)<!-- -->
 
 
 ```r
@@ -236,7 +236,7 @@ qqplot(df_wide$SRR5927134, df_wide$SRR5927133, pch = 19,
 abline(c(0,1), col=2) # 45degree line
 ```
 
-![](CUNY_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
+![](figures/unnamed-chunk-16-1.png)<!-- -->
 
 
 ## Cluster dendrogram
@@ -257,7 +257,7 @@ par(mar=c(6,4,3,0)+0.1)
 plot(dend,cex=.7)
 ```
 
-![](CUNY_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
+![](figures/unnamed-chunk-17-1.png)<!-- -->
 
 ## Heatmap
 
@@ -266,7 +266,7 @@ dataMatrix <- as.matrix(log2(vals))
 heatmap(dataMatrix, cexCol=0.7)
 ```
 
-![](CUNY_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
+![](figures/unnamed-chunk-18-1.png)<!-- -->
 <br>
 
 **Conclusion.** From the **magicblast analysis** and based on the heatmap  we see that samples are clustered by condition, meaning that plants response to drought. the 'drought condition' affects both genotypes. However, ARF7 abundance is not consistent between both genotypes under drought, being higher abundant y the drought tolerant genotype [SRR5927134](https://www.ncbi.nlm.nih.gov/sra/?term=SRR5927134). Tolerant_Drought. It would be interesting to test experimentally this gene in a number of different genotypes to determine its function in drought tolerance. Other ARF sequence of interest for further analysis (based on heat map) are: 22, 6, and 16. 

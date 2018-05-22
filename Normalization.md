@@ -60,4 +60,4 @@ df3 = df2[df2$Reference == "LOC101489666",]
 plot(df3$norm_Moamen, df3$norm_Jose, pch = 19, type = "l", col = "red")
 ```
 
-![](Normalization_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](norm_MvJ.png)<!-- -->

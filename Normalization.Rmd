@@ -1,0 +1,28 @@
+---
+title: "normalization (lab meeting)"
+author: "JD"
+date: "May 22, 2018"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+### Read object 
+```{r}
+load("./my_SRA.RData")
+```
+
+### Check df
+```{r}
+head(df2, 10)
+```
+
+
+### Normalization
+```{r}
+df2$norm_Moamen=df2$Count*mean(df2$MbRun)/df2$MbRun
+df2$norm_Jose=df2$Count/df2$MbRun*df2$Ref_Total
+head(df2,7)
+```
+We can compare expression levels (based on counts) of a given ARF sequence across the libraries. 
+

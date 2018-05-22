@@ -7,6 +7,17 @@ output:
     keep_md: yes
 ---
 
+Here, our starting point is a dataset made of the 24 ARF genes from the chickpea genome. We run [Magic-BLAST](https://ncbi.github.io/magicblast/) against 4 SRA libraries, representing two chickpea genotypes (susceptible and drought tolerant) under two different conditions (control roots, roots under drought). 
+  
+Here we analyze the Magic-Blast table output.  
+
+* [SRR5927129](https://www.ncbi.nlm.nih.gov/sra/?term=SRR5927129). Susceptible_Control
+* [SRR5927130](https://www.ncbi.nlm.nih.gov/sra/?term=SRR5927130). Susceptible_Drought
+* [SRR5927133](https://www.ncbi.nlm.nih.gov/sra/?term=SRR5927133). Tolerant_Control
+* [SRR5927134](https://www.ncbi.nlm.nih.gov/sra/?term=SRR5927134). Tolerant_Drought
+
+
+
 ### Read object 
 
 ```r
@@ -36,9 +47,13 @@ head(df2, 10)
 
 ### Normalization
 
+Two alternatives
 ```r
 df2$norm_Moamen=df2$Count*mean(df2$MbRun)/df2$MbRun
 df2$norm_Jose=df2$Count/df2$MbRun*df2$Ref_Total
+```
+
+```{r}
 head(df2,7)
 ```
 

@@ -13,7 +13,6 @@ An Automated Pipeline to Study **Plant Gene Families based on Protein Domain Org
 ## Workflow
 
 ![](figures/workflow.png)
-# ![](aworkflow.png)
 
 
 ## Conserved Domain Architecture  

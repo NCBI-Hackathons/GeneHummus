@@ -163,7 +163,7 @@ extract_spp_from_subset <- function(targets) {
     
     
     upload <- entrez_post(db="protein", id=targets[[i]]) #create a web_history object 
-    prot_summ = entrez_summary(db="proteins", web_history=upload)
+    prot_summ = entrez_summary(db="protein", web_history=upload)
     prot_title = as.character((extract_from_esummary(prot_summ, c("title"))))
     spp = c(spp, prot_title)
   }
@@ -182,7 +182,7 @@ extract_XP_from_spp <- function(targets, spp) {
   
   for(i in seq_along(targets)) {
     upload <- entrez_post(db="protein", id=targets[[i]]) #create a web_history object
-    prot_summ = entrez_summary(db="proteins", web_history=upload)
+    prot_summ = entrez_summary(db="protein", web_history=upload)
     prot_test = c(prot_test, as.character((extract_from_esummary(prot_summ, c("caption","title")))))
     
   }

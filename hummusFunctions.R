@@ -175,7 +175,7 @@ extract_spp_from_subset <- function(targets) {
 
 extract_XP_from_spp <- function(targets, spp) {
   
-  # ''' targets, vector with protein ids 
+  # ''' targets, vector/list object with protein ids 
   # ''' spp, spp target to extract its XP ids
   
   prot_test = c()
@@ -197,6 +197,9 @@ extract_XP_from_spp <- function(targets, spp) {
   
 }
 
+## Usage
+#targets <- "1012032540" "1117497421" "1012113555"
+#extract_XP_from_spp(targets, "Cicer arietinum")
 
 
 

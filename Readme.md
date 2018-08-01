@@ -17,20 +17,20 @@ An Automated Pipeline to Study **Plant Gene Families based on Protein Domain Org
 
 ## Conserved Domain Architecture  
 
-In total, we have identified **350 Auxin Response Factor protein** sequences across **10 different Legume species**. 
+In total, we have identified **561 Auxin Response Factor protein** sequences across **10 different Legume species**. 
 
 | Species  | # ARF |
 |---------|----------------|
-| *Glycine max* | 61     |
-| *Lupinus angustifolius* | 49 |
-| *Arachis ipaensis* | 41
-| *Arachis duranensis* | 39
-| *Cajanus cajan* |  33
-| *Vigna angularis* | 30
-| *Vigna radiata* | 29
-| ***Cicer arietinum*** | **24**
-| *Medicago truncatula* | 23 
-| *Phaseolus vulgaris* | 21
+| *Glycine max* | 86     |
+| *Lupinus angustifolius* | 92 |
+| *Arachis ipaensis* | 63
+| *Arachis duranensis* | 57
+| *Cajanus cajan* |  56
+| *Vigna angularis* | 43
+| *Vigna radiata* | 41
+| ***Cicer arietinum*** | **45**
+| *Medicago truncatula* | 50 
+| *Phaseolus vulgaris* | 30
 
 
 Question  

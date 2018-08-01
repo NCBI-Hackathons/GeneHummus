@@ -15,6 +15,11 @@ An Automated Pipeline to Study **Plant Gene Families based on Protein Domain Org
 ![](figures/workflow.png)
 
 
+
+You can follow the [tutorial](#tutorial.md) for a step-by-step sequences identification.  
+  
+  
+
 ## Conserved Domain Architecture  
 
 In total, we have identified **561 Auxin Response Factor protein** sequences across **10 different Legume species**. 

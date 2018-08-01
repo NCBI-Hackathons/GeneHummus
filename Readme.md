@@ -16,7 +16,7 @@ An Automated Pipeline to Study **Plant Gene Families based on Protein Domain Org
 
 
 
-You can follow the [tutorial](#tutorial.md) for a step-by-step sequences identification.  
+You can follow the [tutorial](tutorial.md) for a step-by-step sequences identification.  
   
   
 

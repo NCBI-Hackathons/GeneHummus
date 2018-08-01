@@ -303,33 +303,8 @@ sort(table(spp_tidy), decreasing = TRUE)
 ##              Cajanus cajan        Medicago truncatula 
 ##                         56                         50 
 ##            Cicer arietinum            Vigna angularis 
-##                         43                         43 
+##                         45                         43 
 ## Vigna radiata var. radiata         Phaseolus vulgaris 
 ##                         41                         30
-```
-
-
-We can also extract the proteins from a given species. For example, here we are interested in the chikpea ARF proteins accessions.
-
-```r
-chickpea = extract_XP_from_spp(my_values_subset, "Cicer arietinum")
-head(chickpea)
-```
-
-```
-## [1] "XP_004505104" "XP_004490828" "XP_004497510" "XP_004488112"
-## [5] "XP_004504543" "XP_004485417"
-```
-
-```r
-#medicago = extract_XP_from_spp(my_values_subset, "Medicago truncatula")
-#soybean = extract_XP_from_spp(my_values_subset, "Glycine max")
-#lupinus = extract_XP_from_spp(my_values_subset, "Lupinus angustifolius")
-#arachis_ipa = extract_XP_from_spp(my_values_subset, "Arachis ipaensis")
-#arachis_dur = extract_XP_from_spp(my_values_subset, "Arachis duranensis")
-#cajanus = extract_XP_from_spp(my_values_subset, "Cajanus cajan")
-#vigna_ang = extract_XP_from_spp(my_values_subset, 'Vigna angularis')
-#vigna_rad = extract_XP_from_spp(my_values_subset, 'Vigna radiata')
-#phaseolus = extract_XP_from_spp(my_values_subset, 'Phaseolus vulgaris')
 ```
 

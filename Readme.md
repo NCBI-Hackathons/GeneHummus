@@ -22,7 +22,7 @@ You can follow the [tutorial](tutorial.md) for a step-by-step sequences identifi
 
 ## Conserved Domain Architecture  
 
-In total, we have identified **561 Auxin Response Factor protein** sequences across **10 different Legume species**. 
+In total, we have identified **563 Auxin Response Factor protein** sequences across **10 different Legume species**. 
 
 | Species  | # ARF |
 |---------|----------------|

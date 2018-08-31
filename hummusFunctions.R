@@ -26,11 +26,12 @@ getSparcleLabels <- function(my_sparcleIds, CD) {
 
 getSparcleLabels2 <- function(my_sparcleIds, CD) {
   # # CD, string with the conserved domain (used as filter)
-  ## sanitty check: some sparcle ids do not give esummary. ex: "12217856"
+  ## sanitty check: some sparcle ids do not have esummary (ex: "12217856")
   
   for(id in my_sparcleIds) {
     sid = entrez_summary(db = "sparcle", id = id)
-    # only if there is esummary: 
+    
+    # only when esummary: 
     if(length(sid) > 2) {
       if(str_detect(string = sid$displabel, pattern = CD)) {
         print(paste(id, sid$displabel))  
@@ -52,96 +53,84 @@ getProtlinks <- function(sparcleArch) {
 extract_proteins <- function(targets, taxonIds) {
   
   # Initializes vector with the solution
-  ben = c()
+  vals = c()
   
-  # A. Get taxids with protein ids in RefSeq
-  #1 Esummary for each id
+  ## A. Get taxids with protein ids in RefSeq
+  #1 For each id : esummary
   prot_summ = entrez_summary(db = "protein", id = targets)
   
-  #2 Extract from esummary 'sourcedb' and 'taxid'
+  #2 Extract from esummary: 'sourcedb' and 'taxid'
   prot_db = extract_from_esummary(prot_summ, c("sourcedb", "taxid"))
   
   #3 Build df 
-  # no puedo convertir directamente desde lista a df 
-  # truco es unlist
-  # https://stackoverflow.com/questions/4227223/r-list-to-data-frame
   prot_db = data.frame(matrix(unlist(prot_db), nrow = length(prot_db)/2, byrow = T), 
-                       row.names = colnames(prot_db), stringsAsFactors = F) #/2 bc it??s 2 columns: sourcedb-taxid
+                       row.names = colnames(prot_db), stringsAsFactors = F) #/2 bc 2 columns: sourcedb-taxid
   
-  #4 New df: Filter by RefSeq db : volvere a este df para extraer todas las prots de legumes
-  ## no puedo usar dplyr porq no saca rownmanes (donde tengo el id protein)
+  #4 New df: Filter by RefSeq db. Section C extract ids from this table
   #df2_refseq = prot_db %>% filter(X1 == "refseq")
   df2_refseq <- prot_db[prot_db$X1 == "refseq",]
   
   #5 Pull taxids
   taxids_refseq = unique(as.numeric(df2_refseq %>% pull()))
   
-  # B. Get taxids only from Legume family 
-  ## Si hay Leguminosa: 
+  ## B. Get taxids only from Legume family 
+  # If Legume: 
   if(sum(taxids_refseq %in% taxonIds) != 0) {
     idx = which(taxids_refseq %in% taxonIds) 
-    taxids_refseq[idx] # taxid from a Legume spp with refseq protein(s)
+    taxids_refseq[idx] # Legume taxid with refseq protein
     
-    ## ====================================
-    ## only for checking purposes : confirm that spp is Legume
-    ## creo web_history por si hay > tax id 
-    #upload <- entrez_post(db = "taxonomy", id=taxids_refseq[idx]) # create a weh_history object 
-    
-    #tax_summ = entrez_summary(db = "taxonomy", web_history = upload)
-    #extract_from_esummary(tax_summ, c("scientificname")) 
-    
-    
-    # C. De los que sean leguminosas he de volver a la tabla para sacar todas esas proteinas. 
-    # ver untitled 2
-    ## no puedo usar dplyr porq no saca rownmanes (donde tengo el id protein)
+
+    # C. If Legume, extract fromm df some stuff
     ## df2_refseq %>% filter(X2 %in% taxids_refseq[idx])
     ## base R
-    ben = c(ben, rownames(df2_refseq[df2_refseq$X2 %in% taxids_refseq[idx],]))
+    vals = c(vals, rownames(df2_refseq[df2_refseq$X2 %in% taxids_refseq[idx],]))
     
   }
   
-  ben
+  vals
   
 }
+
+
 
 subsetIds <- function(x, sizeIds) {
   #''' x, a vector of one or more elements
   #sizeIds, a positive number, the number of items to choose from '''
   
-  
   # initializes an empty list
-  jose = list()
+  vals = list()
   
-  faa = sample(x, size = sizeIds, replace = FALSE)        # 1st sample
-  jose[[1]] = faa                                         # add 1st element to the list
+  foo = sample(x, size = sizeIds, replace = FALSE)        # 1st sample
+  vals[[1]] = foo                                         # add 1st element to the list
   
   #update vector x
-  x = x[! x %in% faa]
+  x = x[! x %in% foo]
   
   i = 2
   
   while(length(x) >= sizeIds) {
     
-    faa = sample(x, size = sizeIds, replace = FALSE)     # n sample
-    jose[[i]] = faa                                      # add n-th element to the list
+    foo = sample(x, size = sizeIds, replace = FALSE)     # n sample
+    vals[[i]] = foo                                      # add n-th element to the list
     
     #update vector x
-    x = x[! x %in% faa]
+    x = x[! x %in% foo]
     
     i = i+1
     
   }
   
-  # ultimos elementos sobrantes:
+  # remaining elements :
   if(length(x) > 0) {
-    faa = sample(x, size = length(x), replace = FALSE)  # last sample
-    jose[[i]] = faa                                       # add last element to the list
+    foo = sample(x, size = length(x), replace = FALSE)    # last sample
+    vals[[i]] = foo                                       # add last element to the list
     
   }
   
-  jose
+  vals
   
 }
+
 
 
 extract_proteins_from_subset <- function(targets, taxonIds, values) {

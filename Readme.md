@@ -16,7 +16,7 @@ An Automated Pipeline to Study **Plant Gene Families based on Protein Domain Org
 
 
 
-You can follow the [tutorial](tutorial.md) for a step-by-step sequences identification.  
+You can follow our [tutorial](tutorial.md) for a step-by-step sequences identification.  
   
   
 
@@ -39,8 +39,8 @@ In total, we have identified **563 Auxin Response Factor protein** sequences acr
 
 
 Question  
-* What does this information tell us about the expansion of the ARF in Legumes? -in terms of gene duplications (early/ancestral)-  
-
+* What does this information tell us about the expansion of the ARF in Legumes? -in terms of gene duplications (early/ancestral)-      
+* This distribution among legumes, suggests any idea about Genome-wide duplication events in any species ?     
 
 ## Phylogeny  
 * We have 3 main clusters, being cluster II and III more close-related. 

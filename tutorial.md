@@ -28,7 +28,7 @@ source("hummusFunctions.R")
 Load the object `my_hummus`. It contains the vector `legumesIds` with the legumes taxids. From NCBI you can download the taxids from your own family or species. 
 
 ```r
-file = "my_hummus.RData"
+file = "data/my_hummus.RData"
 load(file)
 ```
 

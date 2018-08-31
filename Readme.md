@@ -40,7 +40,7 @@ In total, we have identified **563 Auxin Response Factor protein** sequences acr
 
 Question  
 * What does this information tell us about the expansion of the ARF in Legumes? -in terms of gene duplications (early/ancestral)-      
-* This distribution among legumes, suggests any idea about Genome-wide duplication events in any species ?     
+* This distribution among legumes, suggests any idea about Genome-wide duplication (GWD) events in any species ?     
 
 ## Phylogeny  
 * We have 3 main clusters, being cluster II and III more close-related. 

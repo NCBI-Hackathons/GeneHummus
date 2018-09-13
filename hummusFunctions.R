@@ -24,7 +24,7 @@ getSparcleArchs <- function(CD){
 
 
 
-getSparcleIds <- function(my_ids, CD, gene_family) {
+getSparcleIds <- function(my_ids, filter) {
   ## CD, string with the conserved domain (used as filter)
   ## sanitty check: some sparcle ids do not give esummary. ex: "12217856"
   
@@ -37,7 +37,7 @@ getSparcleIds <- function(my_ids, CD, gene_family) {
     if(length(sid) > 2) {
       
       # check label contains required CDs
-      if(sum(str_count(sid$displabel, required)) == 2) {
+      if(sum(str_count(sid$displabel, filter)) == 2) {
         #print(paste(id, sid$displabel))
         my_labelsIds <- c(my_labelsIds, id)
       }
@@ -48,6 +48,7 @@ getSparcleIds <- function(my_ids, CD, gene_family) {
   }
   my_labelsIds
 }
+
 
 
 printSparcleLabels <- function(labelsIds) {

@@ -79,7 +79,7 @@ The function `getSparcleArchs` will do the job :
 
 ```r
 my_filter <- c("B3_DNA", "Auxin_resp")
-my_labelsIds <- getSparcleLabels(archids)
+my_labelsIds <- getSparcleIds(archids, my_filter)
 ```
 
 ### SPARCLE labels

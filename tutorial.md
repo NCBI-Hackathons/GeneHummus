@@ -101,7 +101,7 @@ getSparcleLabels(cd1, "B3_DNA")
 We can run the `getSparcleLabels` function on the other two architectures (Pfam06507, Pfam02309). After examination of the labels, based on the number of domains (>=3), the only architecture ids making sense for the ARF are: 
 
 ```r
-my_labelsIds <-  c(10332700, 11130507, 10332698, 10492348, 12034166, 11130489)
+my_labelsIds <-  c(10332700, 11130507, 10332698, 10492348, 12034166, 11130489, 12034188, 12034184, 12034182, 11130491,  11279093)
 ```
 
 ### Protein ids 

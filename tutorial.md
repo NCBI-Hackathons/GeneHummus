@@ -82,47 +82,30 @@ my_filter <- c("B3_DNA", "Auxin_resp")
 my_labelsIds <- getSparcleLabels(archids)
 
 ```
-
-Now, we can can get the SPARCLE architectures that meet the filter criteria at once using the `getSparcleArchs` function. 
-```r
-cd = getSparcleArchs(arf)
-```
-
-
-
-
-
-
-
-
-
 ### SPARCLE labels
-Thus, next step, is to identify the architecture ids corresponding to ARF proteins. For this, the SPARCLE labels come in handy. We do not need to get all the labels for each architecture ids. We just need those labels that could be present in the ARF proteins. So, we can filter by any word that we know will be present in the ARF family. For example, we know that a given ARF protein at least contain the domain "B3_DNA".
-
-
+We can look at their labels using the `printSparcleLabels` function. 
 ```r
-getSparcleLabels(cd1, "B3_DNA")
+printSparcleLabels(my_labelsIds)
+```
+All our proteins have any of these SPARCLE ids and labels:  
+```
+[1] "12034188 protein containing domains B3_DNA, Auxin_resp, Activator_LAG-3, and AUX_IAA"
+[1] "12034184 protein containing domains B3_DNA, Auxin_resp, Med15, and PB1"
+[1] "12034182 protein containing domains B3_DNA, Auxin_resp, Atrophin-1, and AUX_IAA"
+[1] "12034166 protein containing domains B3_DNA, Auxin_resp, PAT1, and AUX_IAA"
+[1] "11130507 B3_DNA and Auxin_resp domain-containing protein"
+[1] "11130491 protein containing domains B3_DNA, Auxin_resp, and PEARLI-4"
+[1] "11130489 B3_DNA and Auxin_resp domain-containing protein"
+[1] "10492348 protein containing domains B3_DNA, Auxin_resp, and PB1"
+[1] "11279093 protein containing domains B3_DNA, Auxin_resp, and PB1"
+[1] "10332700 protein containing domains B3_DNA, Auxin_resp, and AUX_IAA"
+[1] "10332698 B3_DNA and Auxin_resp domain-containing protein"
 ```
 
-```
-## [1] "12034188 protein containing domains B3_DNA, Auxin_resp, Activator_LAG-3, and AUX_IAA"
-## [1] "12034184 protein containing domains B3_DNA, Auxin_resp, Med15, and PB1"
-## [1] "12034182 protein containing domains B3_DNA, Auxin_resp, Atrophin-1, and AUX_IAA"
-## [1] "12034166 protein containing domains B3_DNA, Auxin_resp, PAT1, and AUX_IAA"
-## [1] "12034151 protein containing domains B3_DNA, LRR_3, and zf-CCCH"
-## [1] "11279088 B3_DNA domain-containing protein"
-## [1] "11279084 B3_DNA domain-containing protein"
-## [1] "11130507 B3_DNA and Auxin_resp domain-containing protein"
-## [1] "11130491 protein containing domains B3_DNA, Auxin_resp, and PEARLI-4"
-## [1] "11130489 B3_DNA and Auxin_resp domain-containing protein"
-## [1] "10975108 B3_DNA domain-containing protein"
-## [1] "10889850 AP2 and B3_DNA domain-containing protein"
-## [1] "10874725 B3_DNA domain-containing protein"
-## [1] "10492348 protein containing domains B3_DNA, Auxin_resp, and PB1"
-## [1] "10492347 B3_DNA domain-containing protein"
-## [1] "10178159 B3_DNA domain-containing protein"
-## [1] "10178158 B3_DNA domain-containing protein"
-```
+
+
+
+
 
 We can run the `getSparcleLabels` function on the other two architectures (Pfam06507, Pfam02309). After examination of the labels, based on the number of domains (>=3), the only architecture ids making sense for the ARF are: 
 

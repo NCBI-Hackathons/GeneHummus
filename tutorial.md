@@ -51,7 +51,7 @@ arf
 
 Those three accessions correspond with the three ARF conserved domains:  
   
-  * B3 DNA binding domain. (Name NCBI: "B3_DNA")
+  * B3 DNA binding domain
   * Auxin response factor
   * AUX/IAA family
   

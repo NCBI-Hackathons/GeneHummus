@@ -24,7 +24,7 @@ getSparcleArchs <- function(CD){
 
 
 
-getSparcleLabels <- function(my_ids, CD, gene_family) {
+getSparcleIds <- function(my_ids, CD, gene_family) {
   ## CD, string with the conserved domain (used as filter)
   ## sanitty check: some sparcle ids do not give esummary. ex: "12217856"
   
@@ -48,6 +48,19 @@ getSparcleLabels <- function(my_ids, CD, gene_family) {
   }
   my_labelsIds
 }
+
+
+printSparcleLabels <- function(labelsIds) {
+  
+  for(label in labelsIds) {
+    my_label_sum = entrez_summary(db = "sparcle", id = label)
+    print(paste(label, my_label_sum$displabel))
+    
+  }
+  
+}
+
+
 
 
 

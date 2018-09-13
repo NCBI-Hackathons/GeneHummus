@@ -80,8 +80,8 @@ The function `getSparcleArchs` will do the job :
 ```r
 my_filter <- c("B3_DNA", "Auxin_resp")
 my_labelsIds <- getSparcleLabels(archids)
-
 ```
+
 ### SPARCLE labels
 We can look at their labels using the `printSparcleLabels` function. 
 ```r
@@ -102,16 +102,6 @@ All our proteins have any of these SPARCLE ids and labels:
 [1] "10332698 B3_DNA and Auxin_resp domain-containing protein"
 ```
 
-
-
-
-
-
-We can run the `getSparcleLabels` function on the other two architectures (Pfam06507, Pfam02309). After examination of the labels, based on the number of domains (>=3), the only architecture ids making sense for the ARF are: 
-
-```r
-my_labelsIds <-  c(10332700, 11130507, 10332698, 10492348, 12034166, 11130489, 12034188, 12034184, 12034182, 11130491,  11279093)
-```
 
 ### Protein ids 
 Now for each SPARCLE architecture we'll get the whole protein ids list showing that architecture. We'll start by analizing the first architecture (n = 1). 

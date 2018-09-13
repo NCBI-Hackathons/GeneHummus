@@ -51,24 +51,50 @@ arf
 
 Those three accessions correspond with the three ARF conserved domains:  
   
-  * B3 DNA binding domain
+  * B3 DNA binding domain. (Name NCBI: "B3_DNA")
   * Auxin response factor
   * AUX/IAA family
   
-We know from literature that in the case of ARF gene gamily, the last domain (AUX/IAA) may be/not be present. 
+NCBI databases host those domains in this way : 
+  * B3_DNA
+  * Auxin_resp
+  * AUX_IAA
+
 
 ### SPARCLE architectures
-Then, you can get the SPARCLE architectures for each conserved domain using the `getSparcleArchs` function. 
 
 ```r
-cd1 = getSparcleArchs(arf[1])
-cd2 = getSparcleArchs(arf[2])
-cd3 = getSparcleArchs(arf[3])
+getArchids(arf[1])
 ```
-
 For example, the SPARCLE architectures for Pfam02362 are:  
 12034188, 12034184, 12034182, 12034166, 12034151, 11279088, 11279084, 11266712, 11130507, 11130491, 11130489, 11130478, 10975108, 10889850, 10874725, 10803150, 10492348, 10492347, 10178159, 10178158.  
 Not all those architectures link to ARF proteins. But the architecture ids for the ARF proteins will be definitely among them. 
+
+We can can get the SPARCLE architectures for `arf` at once using the function `getArchids`. 
+```r
+archids <- getArchids(arf)
+```
+We know from literature that the last domain (AUX/IAA) in an ARF protein may be/not be present. So, at least two domains have to be present. In other words, we want to get only (=filter) the SPARCLE architectures that contain at least those 2 domains. 
+The function `getSparcleArchs` will do the job : 
+
+```r
+my_filter <- c("B3_DNA", "Auxin_resp")
+my_labelsIds <- getSparcleLabels(archids)
+
+```
+
+Now, we can can get the SPARCLE architectures that meet the filter criteria at once using the `getSparcleArchs` function. 
+```r
+cd = getSparcleArchs(arf)
+```
+
+
+
+
+
+
+
+
 
 ### SPARCLE labels
 Thus, next step, is to identify the architecture ids corresponding to ARF proteins. For this, the SPARCLE labels come in handy. We do not need to get all the labels for each architecture ids. We just need those labels that could be present in the ARF proteins. So, we can filter by any word that we know will be present in the ARF family. For example, we know that a given ARF protein at least contain the domain "B3_DNA".

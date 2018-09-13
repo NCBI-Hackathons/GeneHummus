@@ -24,36 +24,31 @@ getSparcleArchs <- function(CD){
 
 
 
-getSparcleLabels <- function(my_sparcleIds, CD) {
-  # # CD, string with the conserved domain (used as filter)
+getSparcleLabels <- function(my_ids, CD, gene_family) {
+  ## CD, string with the conserved domain (used as filter)
+  ## sanitty check: some sparcle ids do not give esummary. ex: "12217856"
   
-  for(id in my_sparcleIds) {
-    sid = entrez_summary(db = "sparcle", id = id)
-    if(str_detect(string = sid$displabel, pattern = CD)) {
-      print(paste(id, sid$displabel))  
-      }
-    
-    }
-  }
-
-
-getSparcleLabels2 <- function(my_sparcleIds, CD) {
-  # # CD, string with the conserved domain (used as filter)
-  ## sanitty check: some sparcle ids do not have esummary (ex: "12217856")
+  my_labelsIds <- vector(mode = "character")
   
-  for(id in my_sparcleIds) {
+  for(id in my_ids) {
     sid = entrez_summary(db = "sparcle", id = id)
     
-    # only when esummary: 
+    # only if there is esummary: 
     if(length(sid) > 2) {
-      if(str_detect(string = sid$displabel, pattern = CD)) {
-        print(paste(id, sid$displabel))  
+      
+      # check label contains required CDs
+      if(sum(str_count(sid$displabel, required)) == 2) {
+        #print(paste(id, sid$displabel))
+        my_labelsIds <- c(my_labelsIds, id)
       }
+      
       
     }
     
   }
+  my_labelsIds
 }
+
 
 
 getProtlinks <- function(sparcleArch) {

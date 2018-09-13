@@ -1,4 +1,17 @@
 
+getArchids <- function(gene_family) {
+  
+  # gene_family, a vector with conserved domains defining a given gene family 
+  cd <- vector(mode = "character")
+  
+  for(i in seq_along(gene_family)) {
+    cd <- c(cd, getSparcleArchs(arf[i]))
+  }
+  
+  unique(cd)
+}
+
+
 getSparcleArchs <- function(CD){
   
   # CD, string with the conserved domain

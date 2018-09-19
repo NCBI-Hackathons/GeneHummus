@@ -105,7 +105,7 @@ All our proteins have any of these SPARCLE ids and labels:
 
 ### Protein ids 
 Now we'll get the whole proteins ids that show any of those SPARCLE architectures. 
-For tha,t we use the `getProteins` function. 
+For that, we use the `getProteins` function. 
 
 ```{r}
 my_values = getProteins(my_labelsIds)

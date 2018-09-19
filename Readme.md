@@ -34,8 +34,8 @@ In total, we have identified **563 Auxin Response Factor protein** sequences acr
 | *Vigna angularis* | 43
 | *Vigna radiata* | 41
 | ***Cicer arietinum*** | **45**
-| *Medicago truncatula* | 50 
-| *Phaseolus vulgaris* | 30
+| *Medicago truncatula* | 52 
+| *Phaseolus vulgaris* | 31
 
 
 Question  

@@ -83,9 +83,9 @@ my_labelsIds <- getSparcleIds(archids, my_filter)
 ```
 
 ### SPARCLE labels
-We can look at their labels using the `printSparcleLabels` function. 
+We can look at their labels using the `getSparcleLabels` function. 
 ```r
-printSparcleLabels(my_labelsIds)
+getSparcleLabels(my_labelsIds)
 ```
 All our proteins have any of these SPARCLE ids and labels:  
 ```

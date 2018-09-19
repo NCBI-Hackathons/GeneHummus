@@ -63,14 +63,14 @@ NCBI databases host those domains in this way :
 
 ### SPARCLE architectures
 
+Now, we want to get the SPARCLE architectures. For example: the SPARCLE architectures for Pfam02362 are:  
 ```r
 getArchids(arf[1])
 ```
-For example, the SPARCLE architectures for Pfam02362 are:  
 12034188, 12034184, 12034182, 12034166, 12034151, 11279088, 11279084, 11266712, 11130507, 11130491, 11130489, 11130478, 10975108, 10889850, 10874725, 10803150, 10492348, 10492347, 10178159, 10178158.  
 Not all those architectures link to ARF proteins. But the architecture ids for the ARF proteins will be definitely among them. 
 
-We can can get the SPARCLE architectures for `arf` at once using the function `getArchids`. 
+The SPARCLE architectures for `arf` at once using the function `getArchids`. 
 ```r
 archids <- getArchids(arf)
 ```

@@ -51,7 +51,7 @@ getSparcleIds <- function(my_ids, filter) {
 
 
 
-printSparcleLabels <- function(labelsIds) {
+getSparcleLabels <- function(labelsIds) {
   
   for(label in labelsIds) {
     my_label_sum = entrez_summary(db = "sparcle", id = label)

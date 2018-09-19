@@ -77,24 +77,6 @@ getProtlinks <- function(sparcleArch) {
 }
 
 
-getProteins <- function(SPARCLElabels){
-  my_values = c()
-  for(n in seq(SPARCLElabels)) {
-    my_protIds <- getProtlinks(SPARCLElabels[n])
-    if(length(my_protIds) < 301) {
-      my_values <- c(my_values, extract_proteins(my_protIds, legumesIds))
-    } else {
-      protIds_subset <-  subsetIds(my_protIds, 300)
-      vals = extract_proteins_from_subset(protIds_subset, legumesIds)
-      my_values = c(my_values, vals)
-      
-    }
-    
-  }
-  my_values = unique(my_values)
-  my_values
-}
-
 extract_proteins <- function(targets, taxonIds) {
   
   # Initializes vector with the solution
@@ -177,7 +159,6 @@ subsetIds <- function(x, sizeIds) {
 }
 
 
-
 extract_proteins_from_subset <- function(targets, taxonIds, values) {
   
   for(i in seq_along(targets)) {
@@ -186,6 +167,25 @@ extract_proteins_from_subset <- function(targets, taxonIds, values) {
   }
   values
   
+}
+
+
+getProteins <- function(SPARCLElabels){
+  my_values = c()
+  for(n in seq(SPARCLElabels)) {
+    my_protIds <- getProtlinks(SPARCLElabels[n])
+    if(length(my_protIds) < 301) {
+      my_values <- c(my_values, extract_proteins(my_protIds, legumesIds))
+    } else {
+      protIds_subset <-  subsetIds(my_protIds, 300)
+      vals = extract_proteins_from_subset(protIds_subset, legumesIds)
+      my_values = c(my_values, vals)
+      
+    }
+    
+  }
+  my_values = unique(my_values)
+  my_values
 }
 
 

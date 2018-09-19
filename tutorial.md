@@ -104,163 +104,11 @@ All our proteins have any of these SPARCLE ids and labels:
 
 
 ### Protein ids 
-Now for each SPARCLE architecture we'll get the whole protein ids list showing that architecture. We'll start by analizing the first architecture (n = 1). 
+Now we'll get the whole proteins ids that show any of those SPARCLE architectures. 
+For tha,t we use the `getProteins` function. 
 
-```r
-n = 1
-my_labelsIds[n]
-```
 ```{r}
-## [1] "12034188"
-```
-To get the protein ids for the architecture id 12034188, we'll call the function `getProtlinks`:
-
-```r
-my_protIds <- getProtlinks(my_labelsIds[n])
-```
-Depending on the architecture id, the protein ids showing that architecture could be a long list. Because in the next step we'll interact with the [NCBI's web history](https://www.ncbi.nlm.nih.gov/books/NBK25501/) feature, we have to check the length of that list. Note that if you have a very long list of ids (>300) you may receive a 414 error.
-
-
-```r
-length(my_protIds)
-```
-
-```
-## [1] 28
-```
-As we have < 300 ids, now we can call the function `extract_proteins` that has two arguments. The first one is a vector containing the protein ids; the second argument is the taxonomy ids for the species you want to identify the proteins. In this case study, the Legumes ids. The function returns only the protein ids hosted by the RefSeq database.  
-Let's create an empty vector called `my_values` where we'll keep track of every ARF protein id from the Legume family.
-
-```r
-my_values <- extract_proteins(my_protIds, legumesIds)
-```
-
-Now we check the architecture n = 2. 
-
-```r
-n = 2
-my_protIds <- getProtlinks(my_labelsIds[n])
-```
-
-
-```r
-length(my_protIds)
-```
-
-```
-## [1] 2489
-```
-Because this time we have a very long list (>>300), we need to subset the elements, so the `extract_proteins` function can work properly. For subsetting, we'll use the function `subsetIds` that takes as first argument the protein ids and as second argument the length of the subsetting. 
-
-
-```r
-protIds_subset <-  subsetIds(my_protIds, 300)
-length(protIds_subset)
-```
-
-```
-## [1] 9
-```
-Now we have a `protIds_subset` vector, which is a list containing 9 elements. Each element of the list is made of 300 protein ids. 
-
-Now we can call the function `extract_proteins_from_subset`, that in turn will pass the function `extract_proteins` on each of the9 elements. We need two arguments, the vector list, and the targeted taxonomy ids.
-and the vector cotaining the values to be updated. 
-
-
-
-```r
-vals = extract_proteins_from_subset(protIds_subset, legumesIds)
-
-# Update my_values
-my_values = c(my_values, vals)
-```
-
-Let's run the code for the architectures n=3-6. 
-
-
-
-```r
-n = 3
-my_protIds <- getProtlinks(my_labelsIds[n])
-length(my_protIds)
-```
-
-```
-## [1] 29
-```
-
-Update `my_values` with the protein ids from SPARCLE architecture n=3:
-
-```r
-my_values <- c(my_values, extract_proteins(my_protIds, legumesIds))
-length(my_values)
-```
-
-```
-## [1] 170
-```
-
-
-```r
-n = 4
-my_protIds <- getProtlinks(my_labelsIds[n])
-length(my_protIds)
-```
-
-```
-## [1] 4577
-```
-
-
-```r
-protIds_subset <-  subsetIds(my_protIds, 300)
-vals = extract_proteins_from_subset(protIds_subset, legumesIds)
-my_values <- c(my_values,vals)
-length(my_values)
-```
-
-```
-## [1] 547
-```
-
-
-```r
-n = 5
-my_protIds <- getProtlinks(my_labelsIds[n])
-length(my_protIds)
-```
-
-```
-## [1] 34
-```
-
-```r
-my_values <- c(my_values, extract_proteins(my_protIds, legumesIds))
-length(my_values)
-```
-
-```
-## [1] 549
-```
-
-
-```r
-n = 6
-my_protIds <- getProtlinks(my_labelsIds[n])
-length(my_protIds)
-```
-
-```
-## [1] 144
-```
-
-```r
-my_values <- c(my_values, extract_proteins(my_protIds, legumesIds))
-length(my_values)
-```
-
-```
-## [1] 561
+my_values = getProteins(my_labelsIds)
 ```
 
 At this point we have likely identified the whole set of ARF protein ids from the Legume family. Because two given SPARCLE architectures may link to the same sequence, finally we want to check that `my_values` does not contain duplicated values. 
@@ -272,8 +120,21 @@ length(my_values)
 ```
 
 ```
-## [1] 561
+## [1] 564
 ```
+
+
+Let's look at the first ten ARF protein ids : 
+```{r}
+my_values[1:10]
+```
+
+```{r}
+## [1] "593705262"  "1379669790" "357520645"  "1150156484"
+## [5] "1150156482" "1012097438" "1012221046" "1021547479"
+## [9] "1012097433" "1012221050"
+```
+
 
 Now, we want to get the legume species and the number of proteins per species. 
 

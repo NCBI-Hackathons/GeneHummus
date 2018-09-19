@@ -1,3 +1,10 @@
+# Dependencies
+library(rentrez)
+library(stringr)
+library(dplyr)
+library(curl)
+library(httr)
+
 
 getArchids <- function(gene_family) {
   

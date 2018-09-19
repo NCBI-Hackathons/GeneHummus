@@ -70,14 +70,30 @@ getSparcleLabels <- function(labelsIds) {
 
 
 
-
-
 getProtlinks <- function(sparcleArch) {
   spar_to_prot = entrez_link(dbfrom = "sparcle", db = "protein", id = sparcleArch)
   prot_links = spar_to_prot$links$sparcle_protein
   prot_links
 }
 
+
+getProteins <- function(SPARCLElabels){
+  my_values = c()
+  for(n in seq(SPARCLElabels)) {
+    my_protIds <- getProtlinks(SPARCLElabels[n])
+    if(length(my_protIds) < 301) {
+      my_values <- c(my_values, extract_proteins(my_protIds, legumesIds))
+    } else {
+      protIds_subset <-  subsetIds(my_protIds, 300)
+      vals = extract_proteins_from_subset(protIds_subset, legumesIds)
+      my_values = c(my_values, vals)
+      
+    }
+    
+  }
+  my_values = unique(my_values)
+  my_values
+}
 
 extract_proteins <- function(targets, taxonIds) {
   

@@ -303,10 +303,10 @@ sort(table(spp_tidy), decreasing = TRUE)
 ##           Arachis ipaensis         Arachis duranensis 
 ##                         63                         57 
 ##              Cajanus cajan        Medicago truncatula 
-##                         56                         50 
+##                         56                         52 
 ##            Cicer arietinum            Vigna angularis 
 ##                         45                         43 
 ## Vigna radiata var. radiata         Phaseolus vulgaris 
-##                         41                         30
+##                         41                         31
 ```
 

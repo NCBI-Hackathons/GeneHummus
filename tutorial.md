@@ -110,10 +110,9 @@ Now for each SPARCLE architecture we'll get the whole protein ids list showing t
 n = 1
 my_labelsIds[n]
 ```
-
+```{r}
 ## [1] "12034188"
-
-
+```
 To get the protein ids for the architecture id 12034188, we'll call the function `getProtlinks`:
 
 ```r

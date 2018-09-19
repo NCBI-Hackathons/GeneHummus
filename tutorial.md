@@ -108,9 +108,13 @@ Now for each SPARCLE architecture we'll get the whole protein ids list showing t
 
 ```r
 n = 1
-my_target = my_labelsIds[n]
+my_labelsIds[n]
 ```
-To get the protein ids for the architecture id 10332700, we'll call the function `getProtlinks`:
+
+## [1] "12034188"
+
+
+To get the protein ids for the architecture id 12034188, we'll call the function `getProtlinks`:
 
 ```r
 my_protIds <- getProtlinks(my_target)

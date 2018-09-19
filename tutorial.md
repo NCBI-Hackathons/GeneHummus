@@ -310,7 +310,7 @@ sort(table(spp_tidy), decreasing = TRUE)
 ##                         41                         31
 ```
 
-The protein XP ids for each family are contained in the object list `my_legumes`. The list `my_legumes` contains the XP ids for legume species in the following order :   
+The protein XP ids for each species are contained in the object list `my_legumes`. The XP ids are sorted in the following order :   
   * chickpea
   * medicago
   * soybean

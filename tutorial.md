@@ -108,12 +108,12 @@ Now for each SPARCLE architecture we'll get the whole protein ids list showing t
 
 ```r
 n = 1
-sparcleArch = my_labelsIds[n]
+my_target = my_labelsIds[n]
 ```
 To get the protein ids for the architecture id 10332700, we'll call the function `getProtlinks`:
 
 ```r
-my_protIds <- getProtlinks(sparcleArch)
+my_protIds <- getProtlinks(my_target)
 ```
 Depending on the architecture id, the protein ids can be a long list. Because in the next step we'll interact with the [NCBI's web history](https://www.ncbi.nlm.nih.gov/books/NBK25501/) feature, we have to check the length of that list. Note that if you have a very long list of ids (>300) you may receive a 414 error.
 

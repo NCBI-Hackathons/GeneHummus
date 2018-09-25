@@ -171,7 +171,15 @@ sort(table(spp_tidy), decreasing = TRUE)
 ##                         41                         31
 ```
 
-The protein XP ids for each species are contained in the object list `my_legumes`. The XP ids are sorted in the following order :   
+Finally, we use the function `extract_XP_from_spp` to obtein the RefSeq XP id for each protein id for a given species. For example, the XP ids for chickpea, medicago and soybean are : 
+
+```
+chickpea = extract_XP_from_spp(my_values_subset, "Cicer")
+medicago = extract_XP_from_spp(my_values_subset, "Medicago")
+soybean = extract_XP_from_spp(my_values_subset, "Glycine")
+```
+
+We have summarized the data and the protein XP ids for each species are contained in the object list `my_legumes`. The XP ids are sorted in the following order :   
   * chickpea
   * medicago
   * soybean

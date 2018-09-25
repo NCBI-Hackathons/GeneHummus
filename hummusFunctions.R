@@ -214,6 +214,19 @@ extract_spp_from_subset <- function(targets) {
 }
 
 
+
+get_spp <- function(description) {
+  
+  # extract the scientific name from a sequence description 
+  # example: "PREDICTED: auxin response factor 19-like isoform X1 [Glycine max]"
+  
+  spp <- str_sub(description, 
+                 start = str_locate(description, "\\[")[1]+1,
+                 end = str_locate(description, "\\]")[2]-1)
+  spp
+}
+
+
 extract_XP_from_spp <- function(targets, spp) {
   
   # ''' targets, vector/list object with protein ids 
@@ -242,15 +255,3 @@ extract_XP_from_spp <- function(targets, spp) {
 #targets <- "1012032540" "1117497421" "1012113555"
 #extract_XP_from_spp(targets, "Cicer arietinum")
 
-
-
-get_spp <- function(description) {
-  
-  # extract the scientific name from a sequence description 
-  # example: "PREDICTED: auxin response factor 19-like isoform X1 [Glycine max]"
-  
-  spp <- str_sub(description, 
-                 start = str_locate(description, "\\[")[1]+1,
-                 end = str_locate(description, "\\]")[2]-1)
-  spp
-}

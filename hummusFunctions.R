@@ -217,7 +217,7 @@ extract_spp_from_subset <- function(targets) {
 extract_XP_from_spp <- function(targets, spp) {
   
   # ''' targets, vector/list object with protein ids 
-  # ''' spp, spp target to extract its XP ids
+  # ''' spp, spp target to extract its XP ids. Official NCBI Genus / Genus species nomenclature. 
   
   prot_test = c()
   

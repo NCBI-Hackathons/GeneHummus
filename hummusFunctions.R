@@ -159,13 +159,20 @@ subsetIds <- function(x, sizeIds) {
 }
 
 
-extract_proteins_from_subset <- function(targets, taxonIds, values) {
+extract_proteins_from_subset <- function(targets, taxonIds) {
+  
+  # ''' targets, list object with protein ids 
+  
+  vals = c()
   
   for(i in seq_along(targets)) {
-    values = c(values, extract_proteins(targets[[i]], taxonIds))
     
-  }
-  values
+    my_targets = targets[[i]]
+    vals = c(vals, extract_proteins(my_targets,legumesIds ))
+  
+    }
+  
+  vals
   
 }
 

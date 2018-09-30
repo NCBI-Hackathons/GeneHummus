@@ -186,7 +186,7 @@ getProteins <- function(SPARCLElabels){
  
 
 
-extract_spp_from_subset <- function(targets) {
+extract_spp <- function(targets) {
   
   spp = c()
   

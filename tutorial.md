@@ -111,11 +111,9 @@ For that, we use the `getProteins` function.
 my_values = getProteins(my_labelsIds)
 ```
 
-At this point we have likely identified the whole set of ARF protein ids from the Legume family. Because two given SPARCLE architectures may link to the same sequence, finally we want to check that `my_values` does not contain duplicated values. 
-
+At this point we have likely identified the whole set of ARF protein ids from the Legume family.  
 
 ```r
-my_values = unique(my_values)
 length(my_values)
 ```
 
@@ -138,9 +136,13 @@ my_values[1:10]
 
 Now, we want to get the legume species and the number of proteins per species. 
 
-```r
+```{r}
 my_values_subset <-  subsetIds(my_values, 300)
-spp = extract_spp_from_subset(my_values_subset)
+spp = extract_spp(my_values_subset)
+```
+
+Confirm that a species was obtained from any ARF id.  
+```{r}
 length(spp) == length(my_values)
 ```
 

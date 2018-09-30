@@ -120,8 +120,10 @@ length(my_values)
 ```
 ## [1] 564
 ```
-
-
+  
+---
+  
+    
 Let's look at the first ten ARF protein ids : 
 ```{r}
 my_values[1:10]

@@ -159,41 +159,31 @@ subsetIds <- function(x, sizeIds) {
 }
 
 
-extract_proteins_from_subset <- function(targets, taxonIds) {
-  
-  # ''' targets, list object with protein ids 
-  
-  vals = c()
-  
-  for(i in seq_along(targets)) {
-    
-    my_targets = targets[[i]]
-    vals = c(vals, extract_proteins(my_targets,legumesIds ))
-  
-    }
-  
-  vals
-  
-}
-
-
 getProteins <- function(SPARCLElabels){
+  
   my_values = c()
+  
   for(n in seq(SPARCLElabels)) {
     my_protIds <- getProtlinks(SPARCLElabels[n])
+  
     if(length(my_protIds) < 301) {
       my_values <- c(my_values, extract_proteins(my_protIds, legumesIds))
+      
     } else {
       protIds_subset <-  subsetIds(my_protIds, 300)
-      vals = extract_proteins_from_subset(protIds_subset, legumesIds)
-      my_values = c(my_values, vals)
       
+      for(i in seq_along(protIds_subset)) {
+        my_targets = protIds_subset[[i]]
+        my_values = c(my_values, extract_proteins(my_targets,legumesIds ))
+      
+      }
     }
-    
   }
+  
   my_values = unique(my_values)
-  my_values
-}
+  my_values 
+  }
+ 
 
 
 extract_spp_from_subset <- function(targets) {

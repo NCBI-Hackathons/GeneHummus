@@ -17,18 +17,17 @@ library(curl)
 library(httr)
 ```
 
-### Load the R functions
-
-```{r}
-source("hummusFunctions.R")
-```
-
-
 ### HTPP2 errors 
 To avoid errors in the HTPP2 framing layer is recommended to run the following code :   
 
 ```{r}
 httr::set_config(httr::config(http_version = 0))
+```
+
+### Load the R functions
+
+```{r}
+source("hummusFunctions.R")
 ```
 
 

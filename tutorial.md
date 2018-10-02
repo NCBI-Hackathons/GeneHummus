@@ -9,7 +9,7 @@ output:
 
 ### Dependencies
 
-```r
+```{r}
 library(rentrez)
 library(stringr)
 library(dplyr)
@@ -19,15 +19,23 @@ library(httr)
 
 ### Load the R functions
 
-```r
+```{r}
 source("hummusFunctions.R")
+```
+
+
+### HTPP2 errors 
+To avoid errors in the HTPP2 framing layer is recommended to run the following code :   
+
+```{r}
+httr::set_config(httr::config(http_version = 0))
 ```
 
 
 ### Read Legumes taxids
 Load the object `ARFLegumes`. It contains the vector `legumesIds` with the legumes taxids. From NCBI you can download the taxids from your own family or species. 
 
-```r
+```{r}
 file = "data/ARFLegumes.RData"
 load(file)
 ```
@@ -40,7 +48,7 @@ The structure that defines a given family can be found in literature.
 
 You can specify the conserved domain accession number as a query. For example, the three conserved domains that define the ARF gene family are: 
 
-```r
+```{r}
 arf <- c("pfam02362", "pfam06507", "pfam02309")
 arf
 ```
@@ -64,27 +72,27 @@ NCBI databases host those domains in this way :
 ### SPARCLE architectures
 
 Now, we want to get the SPARCLE architectures. For example: the SPARCLE architectures for Pfam02362 are:  
-```r
+```{r}
 getArchids(arf[1])
 ```
 12034188, 12034184, 12034182, 12034166, 12034151, 11279088, 11279084, 11266712, 11130507, 11130491, 11130489, 11130478, 10975108, 10889850, 10874725, 10803150, 10492348, 10492347, 10178159, 10178158.  
 Not all those architectures link to ARF proteins. But the architecture ids for the ARF proteins will be definitely among them. 
 
 The SPARCLE architectures for `arf` at once using the function `getArchids`. 
-```r
+```{r}
 archids <- getArchids(arf)
 ```
 We know from literature that the last domain (AUX/IAA) in an ARF protein may be/not be present. So, at least two domains have to be present. In other words, we want to get only (=filter) the SPARCLE architectures that contain at least those 2 domains. 
 The function `getSparcleArchs` will do the job : 
 
-```r
+```{r}
 my_filter <- c("B3_DNA", "Auxin_resp")
 my_labelsIds <- getSparcleIds(archids, my_filter)
 ```
 
 ### SPARCLE labels
 We can look at their labels using the `getSparcleLabels` function. 
-```r
+```{r}
 getSparcleLabels(my_labelsIds)
 ```
 All our proteins have any of these SPARCLE ids and labels:  
@@ -113,7 +121,7 @@ my_values = getProteins(my_labelsIds)
 
 At this point we have likely identified the whole set of ARF protein ids from the Legume family.  
 
-```r
+```{r}
 length(my_values)
 ```
 
@@ -153,7 +161,7 @@ length(spp) == length(my_values)
 ```
 
 
-```r
+```{r}
 spp_tidy = c()
 for(sp in seq_along(spp)) {
   spp_tidy = c(spp_tidy, get_spp(spp[sp]))
@@ -177,7 +185,7 @@ sort(table(spp_tidy), decreasing = TRUE)
 
 Finally, we use the function `extract_XP_from_spp` to obtain for each species, the RefSeq XP accession for each protein id. For example, the XP accessions for chickpea, medicago and soybean are : 
 
-```
+```{r}
 chickpea = extract_XP_from_spp(my_values_subset, "Cicer")
 medicago = extract_XP_from_spp(my_values_subset, "Medicago")
 soybean = extract_XP_from_spp(my_values_subset, "Glycine")

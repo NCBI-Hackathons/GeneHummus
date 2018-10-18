@@ -8,6 +8,11 @@ An Automated Pipeline to Study **Plant Gene Families based on Protein Domain Org
  - [Expression](https://github.com/NCBI-Hackathons/SimpleGeneExpression)
 
 
+## Publication
+Die JV, Elmassry MM, Leblanc KH, Awe OI, Dillman A, Busby B (2018) GeneHummus: A pipeline to define gene families and their expression in legumes and beyond, bioRxiv 436659; doi: https://doi.org/10.1101/436659
+
+
+
 <br>
 
 ## Workflow

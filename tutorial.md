@@ -7,6 +7,17 @@ output:
     keep_md: yes
 ---
 
+### Basics
+
+If running from the docker container: 
+
+``` 
+docker run -ti ncbihackathons/genehummus3
+cd GeneHummus
+R
+```
+
+
 ### Dependencies
 
 ```{r}
@@ -17,7 +28,7 @@ library(curl)
 library(httr)
 ```
 
-### HTPP2 errors 
+### HTTP2 errors 
 To avoid errors in the HTPP2 framing layer is recommended to run the following code :   
 
 ```{r}

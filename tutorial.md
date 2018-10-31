@@ -29,7 +29,7 @@ library(httr)
 ```
 
 ### HTTP2 errors 
-To avoid errors in the HTPP2 framing layer is recommended to run the following code :   
+To avoid errors in the HTTP2 framing layer is recommended to run the following code :   
 
 ```{r}
 httr::set_config(httr::config(http_version = 0))

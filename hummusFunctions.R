@@ -159,7 +159,7 @@ subsetIds <- function(x, sizeIds) {
 }
 
 
-getProteins <- function(SPARCLElabels){
+getProteins <- function(SPARCLElabels, familyID = legumesIds){
   
   my_values = c()
   
@@ -167,14 +167,14 @@ getProteins <- function(SPARCLElabels){
     my_protIds <- getProtlinks(SPARCLElabels[n])
   
     if(length(my_protIds) < 301) {
-      my_values <- c(my_values, extract_proteins(my_protIds, legumesIds))
+      my_values <- c(my_values, extract_proteins(my_protIds, familyID))
       
     } else {
       protIds_subset <-  subsetIds(my_protIds, 300)
       
       for(i in seq_along(protIds_subset)) {
         my_targets = protIds_subset[[i]]
-        my_values = c(my_values, extract_proteins(my_targets,legumesIds ))
+        my_values = c(my_values, extract_proteins(my_targets,familyID ))
       
       }
     }

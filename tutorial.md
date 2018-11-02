@@ -28,13 +28,6 @@ library(curl)
 library(httr)
 ```
 
-### HTTP2 errors 
-To avoid errors in the HTTP2 framing layer is recommended to run the following code :   
-
-```{r}
-httr::set_config(httr::config(http_version = 0))
-```
-
 ### Load the R functions
 
 ```{r}
@@ -123,7 +116,14 @@ All our proteins have any of these SPARCLE ids and labels:
 
 ### Protein ids 
 Now we'll get the whole proteins ids that show any of those SPARCLE architectures. 
-For that, we use the `getProteins` function. Depending on your dataset this step may take from seconds to 3-5 minutes.     
+For that, we use the `getProteins` function. Depending on your dataset this step may take from seconds to 3-5 minutes.  
+To avoid errors in the HTTP2 framing layer is recommended to run the following code first : 
+
+```{r}
+httr::set_config(httr::config(http_version = 0))
+```
+Now, it's save calling the function: 
+
 
 ```{r}
 my_values = getProteins(my_labelsIds)

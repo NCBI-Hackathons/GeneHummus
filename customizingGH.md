@@ -28,15 +28,14 @@ extract_XP_from_spp(my_values_sol, "Nicotiana tabacum")
 You can download from the NCBI other tax ids and customize your search for your own species. The `Families.RData` object (in the data folder on this repository) contains already the 
 taxonomy ids for the families:  
   
-  * Brassicaceae
-  * Cucurbitaceae 
-  * Rosaceae
-  * Solanaceae
+  * **Brassicaceae**
+  * **Cucurbitaceae**
+  * **Rosaceae**
+  * **Solanaceae**
  
 Using **GeneHummus** with those ids, we have identified the deduced ARF gene 
 family members based on current genomic resources for :  
-
-### Cucurbitaceae  
+  
   
 | Family | Species | # ARF proteins|
 |---------|---------------|---------|

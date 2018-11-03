@@ -44,7 +44,7 @@ getSparcleIds <- function(my_ids, filter) {
     if(length(sid) > 2) {
       
       # check label contains required CDs
-      if(sum(str_count(sid$displabel, filter)) == 2) {
+      if(sum(str_count(sid$displabel, filter)) == length(filter) ) {
         #print(paste(id, sid$displabel))
         my_labelsIds <- c(my_labelsIds, id)
       }
@@ -186,22 +186,34 @@ getProteins <- function(SPARCLElabels, familyID = legumesIds){
  
 
 
-extract_spp <- function(targets) {
+extract_spp <- function(target) {
   
   spp = c()
   
-  for(i in seq_along(targets)) {
+  if(length(target) < 300   ) {
     
-    
-    upload <- entrez_post(db="protein", id=targets[[i]]) #create a web_history object 
+    upload <- entrez_post(db="protein", id=target) #create a web_history object
     prot_summ = entrez_summary(db="protein", web_history=upload)
     prot_title = as.character((extract_from_esummary(prot_summ, c("title"))))
-    spp = c(spp, prot_title)
+    spp = prot_title
+    
+  } else {
+    
+    target = subsetIds(target, 300)
+    for(i in seq(length(target))) {
+      upload <- entrez_post(db="protein", id=target[[i]]) #create a web_history object 
+      prot_summ = entrez_summary(db="protein", web_history=upload)
+      prot_title = as.character((extract_from_esummary(prot_summ, c("title"))))
+      spp = c(spp, prot_title)
+    }
   }
+  
   
   spp
   
+  
 }
+
 
 
 
@@ -217,27 +229,38 @@ get_spp <- function(description) {
 }
 
 
-extract_XP_from_spp <- function(targets, spp) {
-  
-  # ''' targets, vector/list object with protein ids 
+extract_XP_from_spp <- function(target, myspp) {
+  # ''' target, vector/list object with protein ids 
   # ''' spp, spp target to extract its XP ids. Official NCBI Genus / Genus species nomenclature. 
   
+  xp = c()
   prot_test = c()
   
-  for(i in seq_along(targets)) {
-    upload <- entrez_post(db="protein", id=targets[[i]]) #create a web_history object
-    prot_summ = entrez_summary(db="protein", web_history=upload)
-    prot_test = c(prot_test, as.character((extract_from_esummary(prot_summ, c("caption","title")))))
+  if(length(target) < 300   ) {
     
-  }
+    upload <- entrez_post(db="protein", id=target) #create a web_history object
+    prot_summ = entrez_summary(db="protein", web_history=upload)
+    prot_test = as.character((extract_from_esummary(prot_summ, c("caption","title"))))
+    
+  } else {
+    target = subsetIds(target, 300)
+    for(i in seq(length(target))) {
+      upload <- entrez_post(db="protein", id=target[[i]]) #create a web_history object
+      prot_summ = entrez_summary(db="protein", web_history=upload)
+      prot_test = c(prot_test, as.character((extract_from_esummary(prot_summ, c("caption","title")))))
+      
+    } }
   
+  # Build dataframe
   prot_test_df = data.frame(matrix(unlist(prot_test), nrow = length(prot_test)/2, byrow = T), 
                             stringsAsFactors = F) # /2 bc we have 2 columns: caption,title
   
-  idx = which(str_detect(prot_test_df$X2, spp))
+  # Extract ID based on selected species 
+  idx = which(str_detect(prot_test_df$X2, myspp))
   xp = prot_test_df[idx,1]
   
   xp
+  
   
 }
 

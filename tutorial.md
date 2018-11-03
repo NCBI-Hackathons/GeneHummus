@@ -129,6 +129,8 @@ Now, it's save calling the function:
 my_values = getProteins(my_labelsIds)
 ```
 
+(You can customize **GeneHummus** to exend the analysis to other non-legume families by adapting the code to your own data. Here, we have an [example](customizingGH.md).)  
+
 At this point we have likely identified the whole set of ARF protein ids from the Legume family.  
 
 ```{r}

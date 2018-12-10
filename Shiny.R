@@ -16,7 +16,7 @@ ui <- fluidPage(
 )
 
 server <- function(input, output) {
-   load("shinyARFlegumes.Rdata")
+   load("data/shinyARFlegumes.Rdata")
    Table1<-reactive({
       x=as.data.frame(my_tables[input$species])
       names(x)=c("XP", "LOC","Chr","chr_s","chr_e","AA","mol_wt","exon")

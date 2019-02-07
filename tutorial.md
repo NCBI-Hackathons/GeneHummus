@@ -159,8 +159,7 @@ my_values[1:10]
 Now, we want to get the legume species and the number of proteins per species. 
 
 ```{r}
-my_values_subset <-  subsetIds(my_values, 300)
-spp = extract_spp(my_values_subset)
+spp = extract_spp(my_values)
 ```
 
 Confirm that a species was obtained from any ARF id.  

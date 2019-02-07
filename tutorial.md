@@ -197,9 +197,9 @@ sort(table(spp_tidy), decreasing = TRUE)
 Finally, we use the function `extract_XP_from_spp` to obtain for each species, the RefSeq XP accession for each protein id. For example, the XP accessions for chickpea, medicago and soybean are : 
 
 ```{r}
-chickpea = extract_XP_from_spp(my_values_subset, "Cicer")
-medicago = extract_XP_from_spp(my_values_subset, "Medicago")
-soybean = extract_XP_from_spp(my_values_subset, "Glycine")
+chickpea = extract_XP_from_spp(my_values, "Cicer")
+medicago = extract_XP_from_spp(my_values, "Medicago")
+soybean = extract_XP_from_spp(my_values, "Glycine")
 ```
 
 We have summarized the data and the protein XP accessions for each species are contained in the object list `my_legumes`. The XPs are sorted in the following order :   

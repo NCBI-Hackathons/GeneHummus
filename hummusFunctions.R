@@ -12,7 +12,7 @@ getArchids <- function(gene_family) {
   cd <- vector(mode = "character")
   
   for(i in seq_along(gene_family)) {
-    cd <- c(cd, getSparcleArchs(arf[i]))
+    cd <- c(cd, getSparcleArchs(gene_family[i]))
   }
   
   unique(cd)

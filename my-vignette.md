@@ -5,7 +5,7 @@
 ### Read Legumes taxids
 
 Load the object `ARFLegumes`. It contains the vector `legumesIds` with
-the legumes taxids. From NCBI you can download the taxids from your own
+the legumes taxids. From NCBI you can download the taxids for your own
 family or species.
 
     file = "../geneHummus/data/legumesIds.rda"
@@ -16,19 +16,19 @@ family or species.
 Plant gene families are characterized by common protein structure. The
 structure that defines a given family can be found in literature.
 
-You can specify the conserved domain accession number as a query. For
+You can specify the conserved domain accession number as a query (Where do you get info from?). For
 example, the three conserved domains that define the ARF gene family
 are:
 
     arf <- c("pfam02362", "pfam06507", "pfam02309")
 
-Those three accessions correspond with the three ARF conserved domains:
+Those three accessions correspond to the following ARF conserved domains:
 
 -   B3 DNA binding domain
 -   Auxin response factor
 -   AUX/IAA family
 
-NCBI databases host the domains in this way :
+NCBI databases host the conserved domains as written in this way:
 
 -   B3\_DNA
 -   Auxin\_resp

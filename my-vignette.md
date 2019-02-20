@@ -82,12 +82,13 @@ proteins will have any of these SPARCLE ids and labels:
 Now we'll get the whole proteins ids with any of those SPARCLE
 architectures. For that, we use the `getProteins` function. Depending on
 your dataset this step may take from seconds to 3-5 minutes. To avoid
-errors in the HTTP2 framing layer is recommended to run the following
-code first :
+errors in the HTTP2 framing layer, it is recommended to run the following
+code first:
 
     httr::set_config(httr::config(http_version = 0))
 
-Now, it's save calling the function:
+Now, we use the `getProteins` function to retrieve ARF protein ids
+in the Legume family:
 
     my_values = getProteins(my_labelsIds, legumesIds)
 
@@ -97,7 +98,7 @@ from the Legume family.
     length(my_values)
     #> [1] 685
 
-Let's look at the first ten ARF protein ids :
+Let's look at the first ten ARF protein ids:
 
     my_values[1:10]
     #>  [1] "593705262"  "1379669790" "357520645"  "1150156484" "1150156482"
@@ -176,9 +177,9 @@ Now, get the species table by calling the function `spp_table`.
 
 ### XP accessions
 
-Finally, we use the function `extract_XP_from_spp` to obtain for each
-species, the RefSeq XP accessions For example, the XP accessions for
-chickpea, medicago and soybean are :
+Finally, we use the function `extract_XP_from_spp` to obtain the poteins 
+for each species, the RefSeq XP accessions For example, the XP accessions
+for chickpea, medicago and soybean are:
 
     chickpea = extract_XP_from_spp(my_values, "Cicer")
     medicago = extract_XP_from_spp(my_values, "Medicago")
@@ -186,7 +187,7 @@ chickpea, medicago and soybean are :
 
 We have already summarized the data and the protein XP accessions for
 each species are contained in the object list `my_legumes`. The XPs are
-sorted in the following order :
+sorted in the following order:
 
 -   chickpea
 -   medicago
@@ -199,6 +200,6 @@ sorted in the following order :
 -   phaseolus
 -   lupinus
 
-For example, the ARF proteins for chickpea are :
+For example, the ARF proteins for chickpea are:
 
     #my_legumes[[1]]

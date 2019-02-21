@@ -1,21 +1,33 @@
-# GeneHummus
+# geneHummus
 
 An Automated Pipeline to Study **Plant Gene Families based on Protein Domain Organization** using Auxin Response Factors in **chickpea** and other Legumes as an Example.
 
+## Accessing the package
+A stable version of this package will be available on CRAN and could be installed directly from there:  
+
+    install.packages("geneHummus")
+    
+The lastest development version of the package can also be loaded directly from GitHub using the devtools package:
+  
+    library(devtools)
+    install_github("NCBI-Hackathons/GeneHummus")
+    library(GeneHummus)
+    
+    
+## Publication
+Die JV, Elmassry MM, Leblanc KH, Awe OI, Dillman A, Busby B (2018) GeneHummus: A pipeline to define gene families and their expression in legumes and beyond, bioRxiv 436659; doi: https://doi.org/10.1101/436659
+
+<br>
+
+
+## Example
  - [Workflow](#workflow)
  - [CDART](#conserved-domain-architecture)
  - [Phylogeny](#phylogeny)
  - [Expression](https://github.com/NCBI-Hackathons/SimpleGeneExpression)
 
 
-## Publication
-Die JV, Elmassry MM, Leblanc KH, Awe OI, Dillman A, Busby B (2018) GeneHummus: A pipeline to define gene families and their expression in legumes and beyond, bioRxiv 436659; doi: https://doi.org/10.1101/436659
-
-
-
-<br>
-
-## Workflow
+### Workflow
 
 ![](figures/workflow.png)
 
@@ -25,7 +37,7 @@ You can follow our [tutorial](tutorial.md) for a step-by-step sequences identifi
   
   
 
-## Conserved Domain Architecture  
+### Conserved Domain Architecture  
 
 In total, we have identified **563 Auxin Response Factor protein** sequences across **10 different Legume species**. 
 
@@ -47,7 +59,7 @@ Question
 * What does this information tell us about the expansion of the ARF in Legumes? -in terms of gene duplications (early/ancestral)-      
 * This distribution among legumes, suggests any idea about Genome-wide duplication (GWD) events in any species ?     
 
-## Phylogeny  
+### Phylogeny  
 * We have 3 main clusters, being cluster II and III more close-related. 
 * Each cluster is made of a number of subclases or subgroups.   
 * Vast majority of subclases are multi-species

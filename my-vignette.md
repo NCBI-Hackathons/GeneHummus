@@ -1,7 +1,25 @@
 ### Install the package?
+**I am gonna leave this empty because the vignette is available after installing the pckg. So, you are supossed having installed GH to see this. However, I will describe how to install GH from github or CRAN in a new README available from GITHUB.**
 
-
-
+  
+1. Working with `geneHummus`  
+    
+  * load the [package](#load-the-package)
+  * [Legume](#read-legumes-taxids) family ids 
+  * conserved [domains](#retrieve-conserved-domains)
+  * [SPARCLE](#obtain-sparcle-architectures) architectures
+  * [protein](#collect-protein-ids) ids
+    * species table 
+    * XP accessions
+  
+    
+2. [Customizing](#customizing-genehummus) `geneHummus`
+  
+  * Brassicaceae
+  * Cucurbitaceae
+  * Rosaceae
+  * Solanaceae
+  
 ### Load the package
 
     library(geneHummus)
@@ -17,26 +35,24 @@ family or species from NCBI.
 
 ### Retrieve conserved domains
 
-Plant gene families are characterized by common protein structure. The
-structure that defines a given family can be found in relevant literature.
+Plant gene families are characterized by common protein structure. 
+The structure that defines a given family can be found in relevant literature. For example, the three conserved domains that define the ARF gene family are: 
+  
+  * B3 DNA binding domain
+  * Auxin response factor
+  * AUX/IAA family
+  
+NCBI databases host these conserved domains written in this way :  
+  
+  * B3_DNA
+  * Auxin_resp
+  * AUX_IAA
 
-You can specify the conserved domain accession number as a query (Where do you get info from?). For
-example, the three conserved domains that define the ARF gene family
-are:
+You can find this nomenclature or search for your own domains by 
+typing in the search box on top of the [Conserved Domain Database](https://www.ncbi.nlm.nih.gov/cdd). That search will give the accession number for each conserved domain. We want to use these accessions as a query. 
 
     arf <- c("pfam02362", "pfam06507", "pfam02309")
 
-These three accessions correspond to the following ARF conserved domains:
-
--   B3 DNA binding domain
--   Auxin response factor
--   AUX/IAA family
-
-NCBI databases host the conserved domains which are written in this way:
-
--   B3\_DNA
--   Auxin\_resp
--   AUX\_IAA
 
 ### Obtain SPARCLE architectures
 
@@ -207,3 +223,70 @@ sorted in the following order:
 For example, the ARF proteins for chickpea are:
 
     #my_legumes[[1]]
+    
+## Customizing GeneHummus
+`geneHummus` can be customized to be suitable for other agronomically important taxonomic families beyond legumes. For that, we´ll  use the `getProteins` function and pass the corresponding taxonomy filter as an argument. For example, this chunk will get the ARF protein 
+ids for the Solanaceae family: 
+
+```{r sol, cache=T}
+data("solanaceaeIds")
+arf_sol = getProteins(my_labelsIds, familyID = solanaceaeIds)
+```
+Then, you can get the XP accessions for each species in the same way we did for the legume species. 
+```{r cache=TRUE}
+head(extract_XP_from_spp(arf_sol, "Solanum tuberosum"))
+head(extract_XP_from_spp(arf_sol, "Nicotiana tabacum"))
+```
+
+You can download from the NCBI other taxonomy ids and customize your search for your own species. When installing the `genehummus` package, you'll have access to several objects that contain the taxonomy ids for the families:  
+  
+  * Brassicaceae: `brassicaceaeIds`
+  * Cucurbitaceae: `cucurbitaceaeIds`
+  * Rosaceae: `rosaceaeIds`
+  * Solanaceae: `solanaceaeIds`
+  
+You can see the ids by calling, for example : 
+```{r}
+head(geneHummus:::brassicaceaeIds)
+```
+
+Using **GeneHummus** with those ids, we have already identified the deduced ARF gene family members based on current genomic resources for the following species:  
+
+| Family | Species | # ARF proteins|
+|---------|---------------|---------|
+| Brassicaceae | *Brassica napus* | 123 |
+| Brassicaceae | *Camelina sativa* | 86 |
+| Brassicaceae | *Raphanus sativus* | 52 |
+| Brassicaceae | *Brassica oleracea* | 49 |
+| Brassicaceae | *Brassica rapa* | 48 |
+| Brassicaceae | *Arabidopsis thaliana* | 44 |
+| Brassicaceae | *Capsella rubella* | 28 |
+| Brassicaceae | *Eutrema salsugineum* | 26 |
+| Brassicaceae | *Arabidopsis lyrata* | 24 |
+| | | |
+| Cucurbitaceae | *Cucurbita maxima* | 71 | 
+| Cucurbitaceae | *Cucurbita pepo* | 71 | 
+| Cucurbitaceae | *Cucurbita moschata* | 67 | 
+| Cucurbitaceae | *Cucumis sativus* | 27 | 
+| Cucurbitaceae | *Momordica charantia* | 26 | 
+| Cucurbitaceae | *Cucumis melo* | 24 | 
+| | | |
+| Rosaceae | *Pyrus x bretschneideri* | 51 | 
+| Rosaceae | *Malus domestica* | 48 | 
+| Rosaceae | *Prunus avium* | 33 | 
+| Rosaceae | *Rosa chinensis* | 28 | 
+| Rosaceae | *Prunus persica* | 27 | 
+| Rosaceae | *Prunus mume* | 25 | 
+| Rosaceae | *Fragaria vesca* | 23 | 
+| | | |
+| Solanaceae | *Nicotiana tabacum* | 103 | 
+| Solanaceae | *Nicotiana tomentosiformis* | 73 | 
+| Solanaceae | *Nicotiana sylvestris* | 56 | 
+| Solanaceae | *Nicotiana attenuata* | 49 | 
+| Solanaceae | *Capsicum annuum* | 46 | 
+| Solanaceae | *Solanum tuberosum* | 43 | 
+| Solanaceae | *Solanum lycopersicum* | 39 | 
+| Solanaceae | *Solanum pennellii* | 34 | 
+| | | |
+
+

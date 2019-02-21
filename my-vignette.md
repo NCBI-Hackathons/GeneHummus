@@ -1,20 +1,24 @@
+### Install the package?
+
+
+
 ### Load the package
 
     library(geneHummus)
 
 ### Read Legumes taxids
 
-Load the object `ARFLegumes`. It contains the vector `legumesIds` with
-the legumes taxids. From NCBI you can download the taxids for your own
-family or species.
+Load the object `ARFLegumes` that contains the vector `legumesIds` with
+the legumes taxids. You can download the taxids for your own
+family or species from NCBI.
 
     file = "../geneHummus/data/legumesIds.rda"
     load(file)
 
-### Conserved domains
+### Retrieve conserved domains
 
 Plant gene families are characterized by common protein structure. The
-structure that defines a given family can be found in literature.
+structure that defines a given family can be found in relevant literature.
 
 You can specify the conserved domain accession number as a query (Where do you get info from?). For
 example, the three conserved domains that define the ARF gene family
@@ -22,28 +26,28 @@ are:
 
     arf <- c("pfam02362", "pfam06507", "pfam02309")
 
-Those three accessions correspond to the following ARF conserved domains:
+These three accessions correspond to the following ARF conserved domains:
 
 -   B3 DNA binding domain
 -   Auxin response factor
 -   AUX/IAA family
 
-NCBI databases host the conserved domains as written in this way:
+NCBI databases host the conserved domains which are written in this way:
 
 -   B3\_DNA
 -   Auxin\_resp
 -   AUX\_IAA
 
-### SPARCLE architectures
+### Obtain SPARCLE architectures
 
-Now, we want to get the SPARCLE architectures. For example: the first
+Now, we want to get the SPARCLE architectures. For example, the first
 SPARCLE architectures for Pfam02362 are:
 
     head(getArchids(arf[1]))
     #> [1] "12034188" "12034184" "12034182" "12034166" "12034151" "11279088"
 
 Not all of the architectures link to ARF proteins. But the architecture
-ids for the ARF proteins will be definitely between them.
+ids for the ARF proteins will be definitely among them.
 
 We want to get the SPARCLE architectures for the vector `arf` at once
 using the function `getArchids`.
@@ -51,17 +55,17 @@ using the function `getArchids`.
     archids <- getArchids(arf)
 
 We know from the literature that the last domain (AUX/IAA) in the
-canonical ARF protein structure may be/not be present. So, at least two
-domains have to be present. In other words, we want to get only (filter)
-the SPARCLE architectures that contain at least those 2 domains. The
-function `getSparcleIds` will do the job :
+canonical ARF protein structure may or may not be present. Therefore, at least two
+domains have to be present. In other words, we want to filter
+the SPARCLE architectures and keep that contain those 2 domains. The
+function `getSparcleIds` will do the job:
 
     my_filter <- c("B3_DNA", "Auxin_resp")
     my_labelsIds <- getSparcleIds(archids, my_filter)
 
-#### SPARCLE labels
+#### Get SPARCLE labels
 
-We can look at their labels using the `getSparcleLabels` function. Our
+We can look at SPARCLE labels of the proteins using the `getSparcleLabels` function. Our
 proteins will have any of these SPARCLE ids and labels:
 
     getSparcleLabels(my_labelsIds)
@@ -77,9 +81,9 @@ proteins will have any of these SPARCLE ids and labels:
     #> [1] "10332700 protein containing domains B3_DNA, Auxin_resp, and AUX_IAA"
     #> [1] "10332698 B3_DNA and Auxin_resp domain-containing protein"
 
-### Protein ids
+### Collect protein ids
 
-Now we'll get the whole proteins ids with any of those SPARCLE
+Now we'll get all proteins ids with any of those SPARCLE
 architectures. For that, we use the `getProteins` function. Depending on
 your dataset this step may take from seconds to 3-5 minutes. To avoid
 errors in the HTTP2 framing layer, it is recommended to run the following

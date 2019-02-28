@@ -1,0 +1,25 @@
+Package: geneHummus
+Title: A Pipeline to Define Gene Families in Legumes and Beyond
+Version: 1.0.0
+Authors@R: c(
+  person("Jose V.", "Die", email = "jose.die@uco.es", role = c("aut", "cre")), 
+  person("Moamen M.", "Elmassry", email = "moamen.elmassry@ttu.edu", role = c("aut")),
+  person("Kimberly H.", "LeBlanc", email = "kimberly.leblanc@nih.gov", role = c("aut")),
+  person("Olaitan I.", "Awe", email = "laitanawe@gmail.com", role = c("aut")),
+  person("Allissa","Dillman", email = "Allissa.Dillman@nih.gov", role = c("aut")), 
+  person("Ben", "Busby", email = "Ben.Busby@nih.gov", role = c("aut")))
+Description: A pipeline with high specificity and sensitivity in 
+  extracting proteins from the RefSeq database.
+Depends: R (>= 3.5.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: rentrez, 
+  stringr,
+  dplyr, 
+  httr, 
+  utils
+Suggests: knitr, 
+  rmarkdown
+RoxygenNote: 6.1.1
+URL: https://github.com/NCBI-Hackathons/GeneHummus

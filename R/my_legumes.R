@@ -1,0 +1,29 @@
+#' ARF proteins per legume specie
+#'
+#' XP accessions for the Auxin Response Factor gene family in the Legume
+#' Legume taxonomy (NCBI RefSeq database, as of SEP 2018).
+#'
+#' @docType data
+#'
+#' @usage data(my_legumes)
+#'
+#' @format a list of length 10 with 563 elements.
+#' \itemize{
+#'  \item 1. chickpea
+#'  \item 2. medicago
+#'  \item 3. soybean
+#'  \item 4. arachis_duranensis
+#'  \item 5. arachis_ipaensis
+#'  \item 6. cajanus
+#'  \item 7. vigna_angulata
+#'  \item 8. vigna_radiata
+#'  \item 9. phaseolus
+#'  \item 10. lupinus
+#' }
+#'
+#' @keywords datasets
+#'
+#' @source Protein identifiers for Fabaceae species (\href{https://www.ncbi.nlm.nih.gov/refseq/}{RefSeq}
+#'         databse, NCBI).
+#'
+"my_legumes"

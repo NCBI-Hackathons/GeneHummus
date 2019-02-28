@@ -11,7 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # geneHummus
 
-An Automated Pipeline to Study **Plant Gene Families based on Protein Domain Organization** using Auxin Response Factors in **chickpea** and other Legumes as an Example.
+An Automated Pipeline to Study **Plant Gene Families based on Protein Domain Organization** using Auxin Response Factors in **chickpea** and other Legumes as an Example. The pipeline is convenient if you are interested in plant gene families characterization, or you'd like to perform some downstream analysis such as phylogenetic construction or gene expression profiling, to name a few examples. 
+
 
 ## Accessing the package
 A stable version of this package will be available on CRAN and could be installed directly from there:  

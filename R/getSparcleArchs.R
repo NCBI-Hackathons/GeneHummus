@@ -11,10 +11,6 @@
 #'
 #' @importFrom rentrez entrez_search entrez_summary entrez_link
 #'
-#' @examples \dontrun{
-#' CD = "pfam02362"
-#' getSparcleArchs(CD) }
-#'
 #' @author Jose V. Die
 
 

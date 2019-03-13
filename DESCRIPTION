@@ -2,14 +2,21 @@ Package: geneHummus
 Title: A Pipeline to Define Gene Families in Legumes and Beyond
 Version: 1.0.0
 Authors@R: c(
-  person("Jose V.", "Die", email = "jose.die@uco.es", role = c("aut", "cre")), 
+  person("Jose V.", "Die", email = "jose.die@uco.es", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7506-8590")), 
   person("Moamen M.", "Elmassry", email = "moamen.elmassry@ttu.edu", role = c("aut")),
   person("Kimberly H.", "LeBlanc", email = "kimberly.leblanc@nih.gov", role = c("aut")),
   person("Olaitan I.", "Awe", email = "laitanawe@gmail.com", role = c("aut")),
   person("Allissa","Dillman", email = "Allissa.Dillman@nih.gov", role = c("aut")), 
   person("Ben", "Busby", email = "Ben.Busby@nih.gov", role = c("aut")))
-Description: A pipeline with high specificity and sensitivity in 
-  extracting proteins from the RefSeq database.
+Description: A pipeline with high specificity and sensitivity in extracting
+  proteins from the RefSeq database (National Center for Biotechnology 
+  Information). Manual identification of gene families is highly 
+  time-consuming and laborious, requiring an iterative process of manual 
+  and computational analysis to identify members of a given family. The 
+  pipelines implements an automatic approach for the identification of gene
+  families based on the conserved domains that specifically define that 
+  family. See Die et al. (2017) <doi:10.1101/436659> for more information 
+  and examples.
 Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Encoding: UTF-8

@@ -14,9 +14,9 @@
 #'
 #' @return
 #' print out the description label for the candidate architectures that
-#'  contain the proteins we are looking for.
+#' contain the proteins we are looking for.
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' filtered_ids <- filterArch_ids(archs_ids, my_filter)
 #' getArch_labels(filtered_ids)}
 #'

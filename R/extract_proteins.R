@@ -11,8 +11,8 @@
 #' @importFrom dplyr %>% pull
 #'
 #' @details
-#' First, get the protein ids from RefSeq database. Then, extract only the ids
-#'   for the selected taxonomic species (by default, legume species).
+#' First, get the protein ids from RefSeq database. Then, extract only the 
+#' ids for the selected taxonomic species (by default, legume species).
 #'
 #' @author Jose V. Die
 

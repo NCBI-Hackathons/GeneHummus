@@ -16,12 +16,12 @@
 #'
 #' @return
 #' the architecture identifiers from all the potential protein architectures
-#'  defined by \code{getArch_ids} that contain, at least, the conserved
-#'  domains explicitily show by the filter.
+#' defined by \code{getArch_ids} that contain, at least, the conserved
+#' domains explicitily show by the filter.
 #'
-#'  @seealso \code{\link{getArch_ids}}
+#' @seealso \code{\link{getArch_ids}}
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' archids <- getArch_ids("pfam02362")
 #' my_filter <- c("B3_DNA", "Auxin_resp")
 #' filterArch_ids(archids, my_filter) }

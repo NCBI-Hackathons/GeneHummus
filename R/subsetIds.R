@@ -1,6 +1,6 @@
 #' Build a list containing N elements per element list
 #'
-#' Split a vector into N elements, so that each element contain a given
+#' Split a vector into N elements, so that each element contains a given
 #' length.
 #'
 #' @importFrom utils globalVariables

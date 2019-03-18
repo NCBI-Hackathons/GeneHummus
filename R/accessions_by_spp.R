@@ -16,6 +16,7 @@
 #' \itemize{
 #' \item organism
 #' \item n   
+#'   }
 #'   
 #' @examples
 #' my_prots = data.frame(accession = c("XP_014620925", "XP_003546066", 

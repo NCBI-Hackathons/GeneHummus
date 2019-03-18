@@ -17,8 +17,8 @@ Extract the protein identifier for the given taxonomic species, which are
    hosted by the RefSeq database (NCBI).
 }
 \details{
-First, get the protein ids from RefSeq database. Then, extract only the ids
-  for the selected taxonomic species (by default, legume species).
+First, get the protein ids from RefSeq database. Then, extract only the 
+ids for the selected taxonomic species (by default, legume species).
 }
 \author{
 Jose V. Die

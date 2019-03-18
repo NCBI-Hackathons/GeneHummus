@@ -13,12 +13,6 @@ getSparcleArchs(CD)
 Parses the SPARCLE database (NCBI) and extract the electronic links for
 a given conserved domain.
 }
-\examples{
-\dontrun{
-CD = "pfam02362"
-getSparcleArchs(CD) }
-
-}
 \author{
 Jose V. Die
 }

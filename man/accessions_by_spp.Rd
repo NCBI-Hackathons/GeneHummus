@@ -9,6 +9,13 @@ accessions_by_spp(my_accessions)
 \arguments{
 \item{my_accessions}{A data frame with accession protein ids and organisms}
 }
+\value{
+A \code{data.frame} of summarized results including columns:
+\itemize{
+\item organism
+\item n   
+  }
+}
 \description{
 Summarizes a dataframe of protein ids and return the total number of accessions 
 per organism.

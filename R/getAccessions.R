@@ -26,6 +26,7 @@
 #' \itemize{
 #' \item accession
 #' \item organism  
+#' }
 #'  
 #' @examples 
 #' prot_ids <- c("593705262", "1379669790", "357520645",  "1150156484")

@@ -9,6 +9,13 @@ getAccessions(protein_ids)
 \arguments{
 \item{protein_ids}{A string vector containing protein identifiers.}
 }
+\value{
+A \code{data.frame} of protein ids including columns:
+\itemize{
+\item accession
+\item organism  
+}
+}
 \description{
 The \code{getAccessions} function parses the protein page for each identifier 
 and extracts the accession id (usually referred as XP accession in the RefSeq

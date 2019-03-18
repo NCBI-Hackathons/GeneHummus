@@ -11,14 +11,14 @@ getArch_labels(arch_ids)
 }
 \value{
 print out the description label for the candidate architectures that
- contain the proteins we are looking for.
+contain the proteins we are looking for.
 }
 \description{
 Parses the architecture identifiers and extract their corresponding
 labels.
 }
 \examples{
-\dontrun{
+\donttest{
 filtered_ids <- filterArch_ids(archs_ids, my_filter)
 getArch_labels(filtered_ids)}
 

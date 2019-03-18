@@ -19,7 +19,7 @@ Parses the SPARCLE database (NCBI) and extract the electronic identifiers
 for each conserved domain.
 }
 \examples{
-\dontrun{
+\donttest{
 arf <- c("pfam02362", "pfam06507", "pfam02309")
 getArch_ids(arf)}
 

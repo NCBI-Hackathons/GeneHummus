@@ -15,22 +15,23 @@ at least, one of the conserved domains defining the gene family.}
 }
 \value{
 the architecture identifiers from all the potential protein architectures
- defined by \code{getArch_ids} that contain, at least, the conserved
- domains explicitily show by the filter.
-
- @seealso \code{\link{getArch_ids}}
+defined by \code{getArch_ids} that contain, at least, the conserved
+domains explicitily show by the filter.
 }
 \description{
 Parse the architecture identifiers and extract those that contain, at
 least, those selected in the filter.
 }
 \examples{
-\dontrun{
+\donttest{
 archids <- getArch_ids("pfam02362")
 my_filter <- c("B3_DNA", "Auxin_resp")
 filterArch_ids(archids, my_filter) }
 
 
+}
+\seealso{
+\code{\link{getArch_ids}}
 }
 \author{
 Jose V. Die

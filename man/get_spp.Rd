@@ -16,11 +16,6 @@ for each sequence description, extract the species name.
 Parse a string vector with sequence descriptions (title and species) and
 extract the species name.
 }
-\examples{
-desc <- "PREDICTED: auxin response factor 19-like isoform X1 [Glycine max]"
-get_spp(desc)
-
-}
 \author{
 Jose V. Die
 }

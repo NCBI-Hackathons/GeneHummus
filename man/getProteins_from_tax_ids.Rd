@@ -7,10 +7,10 @@
 getProteins_from_tax_ids(arch_ids, taxonIds)
 }
 \arguments{
-\item{arch_ids}{A string with the electronic links for the SPARCLE}
+\item{arch_ids}{A string with the electronic links for the SPARCLE.}
 
 \item{taxonIds}{A vector string with taxonomy ids; Legume species available
-in RefSeq, by default}
+in RefSeq, by default.}
 }
 \value{
 RefSeq protein identifiers for selected species.
@@ -18,6 +18,11 @@ RefSeq protein identifiers for selected species.
 \description{
 Parse the RefSeq database using protein architecture identifiers (SPARCLE dabatse)
 and extract the protein ids. for the selected taxonomic species.
+}
+\examples{
+filtered_archids <- c("12034188", "12034184")
+getProteins_from_tax_ids(filtered_archids, legumesIds)
+
 }
 \author{
 Jose V. Die

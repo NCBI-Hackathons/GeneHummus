@@ -13,13 +13,7 @@
 #' @return
 #' for each sequence description, extract the species name.
 #'
-#' @examples
-#' desc <- "PREDICTED: auxin response factor 19-like isoform X1 [Glycine max]"
-#' get_spp(desc)
-#'
 #' @author Jose V. Die
-#'
-#' @export
 
 
 get_spp <-

@@ -23,11 +23,16 @@ Parse the architecture identifiers and extract those that contain, at
 least, those selected in the filter.
 }
 \examples{
-\donttest{
-archids <- getArch_ids("pfam02362")
+\dontrun{
+archs_ids <- getArch_ids("pfam02362")
 my_filter <- c("B3_DNA", "Auxin_resp")
-filterArch_ids(archids, my_filter) }
 
+filterArch_ids(archs_ids, my_filter) 
+}
+\dontshow{
+archs_ids <- c("12034166", "12034151", "11279088")
+my_filter <- c("B3_DNA", "Auxin_resp")
+filterArch_ids(archs_ids, my_filter) }
 
 }
 \seealso{

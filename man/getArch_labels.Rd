@@ -7,7 +7,7 @@
 getArch_labels(arch_ids)
 }
 \arguments{
-\item{arch_ids}{A string with the electronic identifiers.}
+\item{arch_ids}{A string with the architecture electronic identifiers.}
 }
 \value{
 print out the description label for the candidate architectures that
@@ -18,9 +18,12 @@ Parses the architecture identifiers and extract their corresponding
 labels.
 }
 \examples{
+\dontshow{
+filtered_archids <- c("12034188", "12034184","12034182")
+getArch_labels(filtered_archids)}
 \donttest{
-filtered_ids <- filterArch_ids(archs_ids, my_filter)
-getArch_labels(filtered_ids)}
+filtered_archids <- filterArch_ids(archs_ids, my_filter)
+getArch_labels(filtered_archids)}
 
 }
 \seealso{

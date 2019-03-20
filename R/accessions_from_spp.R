@@ -22,6 +22,7 @@
 #'    organism =  c("Glycine max", "Glycine max", "Arachis hypogaea",
 #'    "Lupinus angustifolius", "Glycine max", "Cajanus cajan", 
 #'    "Vigna angularis", "Cicer arietinum", "Lupinus angustifolius"))
+#'    
 #' accessions_from_spp(my_prots, "Glycine max")
 #'  
 #' @author Jose V. Die 

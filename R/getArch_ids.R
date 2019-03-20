@@ -14,7 +14,12 @@
 #' @return
 #' all the architectures identifiers for each of the conserved domains.
 #'
-#' @examples \donttest{
+#' @examples 
+#' \dontshow{
+#' arf <- c("pfam06507")
+#' getArch_ids(arf)}
+#' 
+#' \donttest{
 #' arf <- c("pfam02362", "pfam06507", "pfam02309")
 #' getArch_ids(arf)}
 #'

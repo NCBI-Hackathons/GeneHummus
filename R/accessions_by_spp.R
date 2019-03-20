@@ -3,7 +3,7 @@
 #' Summarizes a dataframe of protein ids and return the total number of accessions 
 #' per organism. 
 #' 
-#' @importFrom dplyr %>% count
+#' @importFrom dplyr %>% count rename
 #' 
 #' @param my_accessions A data frame with accession protein ids and organisms 
 #' 
@@ -14,8 +14,8 @@
 #' 
 #' @return A \code{data.frame} of summarized results including columns:
 #' \itemize{
-#' \item organism
-#' \item n   
+#' \item organism, taxonomic species
+#' \item N.seqs, total number of sequences   
 #'   }
 #'   
 #' @examples
@@ -25,6 +25,7 @@
 #'    organism =  c("Glycine max", "Glycine max", "Arachis hypogaea",
 #'    "Lupinus angustifolius", "Glycine max", "Cajanus cajan", 
 #'    "Vigna angularis", "Cicer arietinum", "Lupinus angustifolius"))
+#'    
 #' accessions_by_spp(my_prots)
 #'  
 #' @author Jose V. Die 
@@ -34,8 +35,8 @@
 
 accessions_by_spp <- function(my_accessions){
   
-  my_accessions %>% count(organism) 
+  my_accessions %>% count(organism) %>% rename(N.seqs = n)
   
 }
 
-utils::globalVariables(c("organism", "n"))
+utils::globalVariables(c("organism", "N.seqs"))

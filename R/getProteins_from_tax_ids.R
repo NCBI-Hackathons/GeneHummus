@@ -6,13 +6,17 @@
 #' @usage
 #' getProteins_from_tax_ids(arch_ids, taxonIds)
 #'
-#' @param arch_ids A string with the electronic links for the SPARCLE
+#' @param arch_ids A string with the electronic links for the SPARCLE.
 #' @param taxonIds A vector string with taxonomy ids; Legume species available
-#'   in RefSeq, by default
+#'   in RefSeq, by default.
 #'
 #' @return
 #' RefSeq protein identifiers for selected species.
 #'
+#' @examples 
+#' filtered_archids <- c("12034188", "12034184")
+#' getProteins_from_tax_ids(filtered_archids, legumesIds)
+#' 
 #' @author Jose V. Die
 #'
 #' @export

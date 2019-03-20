@@ -12,8 +12,8 @@ accessions_by_spp(my_accessions)
 \value{
 A \code{data.frame} of summarized results including columns:
 \itemize{
-\item organism
-\item n   
+\item organism, taxonomic species
+\item N.seqs, total number of sequences   
   }
 }
 \description{
@@ -27,6 +27,7 @@ my_prots = data.frame(accession = c("XP_014620925", "XP_003546066",
    organism =  c("Glycine max", "Glycine max", "Arachis hypogaea",
    "Lupinus angustifolius", "Glycine max", "Cajanus cajan", 
    "Vigna angularis", "Cicer arietinum", "Lupinus angustifolius"))
+   
 accessions_by_spp(my_prots)
  
 }

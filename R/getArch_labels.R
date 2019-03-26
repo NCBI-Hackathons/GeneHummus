@@ -11,6 +11,7 @@
 #' @seealso \code{filterArch_ids}
 #'
 #' @importFrom rentrez entrez_summary
+#' @importFrom curl has_internet
 #'
 #' @return
 #' print out the description label for the candidate architectures that
@@ -31,11 +32,15 @@
 
 getArch_labels <-
 function(arch_ids) {
-
-  for(id in arch_ids) {
-    my_label_sum = entrez_summary(db = "sparcle", id = id)
-    print(paste(id, my_label_sum$displabel))
-
+  
+  if(!curl::has_internet()) {
+    message("This function requires Internet connection.")
+  } else {
+    for(id in arch_ids) {
+      my_label_sum = entrez_summary(db = "sparcle", id = id)
+      print(paste(id, my_label_sum$displabel))
   }
+
+      }
 
 }

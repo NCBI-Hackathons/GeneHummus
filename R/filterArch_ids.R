@@ -11,6 +11,7 @@
 #' @param filter A string with the domains (and order) that are required
 #'   (at least) for the proteins to have.
 #'
+#' @importFrom curl has_internet
 #' @importFrom rentrez entrez_summary
 #' @importFrom stringr str_count
 #'
@@ -40,22 +41,27 @@
 filterArch_ids <-
 function(archs_ids, filter) {
 
-  my_labelsIds <- vector(mode = "character")
-
-  for(id in archs_ids) {
-    sid = entrez_summary(db = "sparcle", id = id)
-
-    # sanitty check: some sparcle ids do not give esummary. ex: "12217856"
-    # only if esummary:
-    if(length(sid) > 2) {
-
-      # check label contains required CDs
-      if(sum(str_count(sid$displabel, filter)) == length(filter) ) {
-        my_labelsIds <- c(my_labelsIds, id)
+  if(!curl::has_internet()) {
+    message("This function requires Internet connection.")
+    } else {
+      
+      my_labelsIds <- vector(mode = "character")
+    
+      for(id in archs_ids) {
+        sid = entrez_summary(db = "sparcle", id = id)
+    
+        # sanitty check: some sparcle ids do not give esummary. ex: "12217856"
+        # only if esummary:
+        if(length(sid) > 2) {
+    
+          # check label contains required CDs
+          if(sum(str_count(sid$displabel, filter)) == length(filter) ) {
+            my_labelsIds <- c(my_labelsIds, id)
+          }
+    
+          }
+    
       }
-
+      my_labelsIds
       }
-
-  }
-  my_labelsIds
 }

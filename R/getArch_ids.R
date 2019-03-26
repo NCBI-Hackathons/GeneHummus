@@ -3,6 +3,8 @@
 #' Parses the SPARCLE database (NCBI) and extract the electronic identifiers
 #' for each conserved domain.
 #'
+#' @importFrom curl has_internet
+#' 
 #' @usage
 #' getArch_ids(gene_family)
 #'
@@ -31,11 +33,17 @@
 getArch_ids <-
 function(gene_family) {
 
-  cd <- vector(mode = "character")
-
-  for(i in seq_along(gene_family)) {
-    cd <- c(cd, getSparcleArchs(gene_family[i]) )
+  if(!curl::has_internet()) {
+    message("This function requires Internet connection.")
+  } else {
+    cd <- vector(mode = "character")
+    
+    for(i in seq_along(gene_family)) {
+      cd <- c(cd, getSparcleArchs(gene_family[i]) )
+    }
+    
+    unique(cd)
+    
+    
   }
-
-  unique(cd)
-}
+  }

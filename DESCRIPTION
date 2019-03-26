@@ -1,6 +1,6 @@
 Package: geneHummus
 Title: A Pipeline to Define Gene Families in Legumes and Beyond
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: c(
   person("Jose V.", "Die", email = "jose.die@uco.es", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7506-8590")), 
   person("Moamen M.", "Elmassry", email = "moamen.elmassry@ttu.edu", role = c("aut")),
@@ -20,11 +20,12 @@ Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: rentrez, 
-  stringr,
-  dplyr, 
-  httr, 
-  utils
+Imports: rentrez (>= 1.2.1), 
+  stringr (>= 1.4.0),
+  dplyr (>= 0.8.0.1), 
+  httr (>= 1.4.0), 
+  utils, 
+  curl (>= 3.3)
 Suggests: knitr, 
   rmarkdown
 RoxygenNote: 6.1.1

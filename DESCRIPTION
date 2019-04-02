@@ -15,7 +15,7 @@ Description: A pipeline with high specificity and sensitivity in extracting
   computational analysis to identify members of a given family. The pipelines 
   implements an automatic approach for the identification of gene families 
   based on the conserved domains that specifically define that family. See 
-  Die et al. (2017) <doi:10.1101/436659> for more information and examples.
+  Die et al. (2018) <doi:10.1101/436659> for more information and examples.
 Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -31,3 +31,4 @@ Suggests: knitr,
 RoxygenNote: 6.1.1
 URL: https://github.com/NCBI-Hackathons/GeneHummus
 BugReports: https://github.com/NCBI-Hackathons/GeneHummus/issues
+VignetteBuilder: knitr

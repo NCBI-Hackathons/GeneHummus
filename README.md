@@ -11,7 +11,7 @@ An Automated Pipeline to Study **Plant Gene Families based on Protein Domain Org
 
 
 ## Accessing the package
-A stable version of this package will be available on CRAN and could be installed directly from there:  
+A stable version of this package is available on CRAN and can be installed directly from there:  
 
     install.packages("geneHummus")
     

@@ -9,8 +9,6 @@
 #' the total number of XP accessions per species or extracting the XP 
 #' accessions for a given species, respectively.  
 #'  
-#' @importFrom rentrez entrez_post entrez_summary extract_from_esummary
-#' @importFrom dplyr %>% mutate select
 #' @importFrom curl has_internet
 #'  
 #' @usage 
@@ -30,7 +28,7 @@
 #' }
 #'  
 #' @examples 
-#' prot_ids <- c("593705262", "1379669790", "357520645",  "1150156484")
+#' prot_ids <- c("593705262", "1379669790", "1150156484")
 #' getAccessions(prot_ids)
 #'  
 #' @author Jose V. Die 
@@ -38,44 +36,16 @@
 #' @export
 
 
-getAccessions <- function(protein_ids) {
-  
-  if(!curl::has_internet()) {
+getAccessions <- 
+function(protein_ids) {
+  if(!has_internet()) {
     message("This function requires Internet connection.")
   } else {
-    vals = c()
-    
-    if(length(protein_ids) < 300 ) {
-      upload <- entrez_post(db="protein", id=protein_ids) #create a web_history object
-      prot_summ = entrez_summary(db="protein", web_history=upload)
-      vals = as.character((extract_from_esummary(prot_summ, c("caption","title")))) 
-      
-    } else {
-      protein_ids = subsetIds(protein_ids, sizeIds)
-      for(i in seq(length(protein_ids))) {
-        upload <- entrez_post(db="protein", id=protein_ids[[i]]) #create a web_history object
-        prot_summ = entrez_summary(db="protein", web_history=upload)
-        vals = c(vals, as.character((extract_from_esummary(prot_summ, c("caption","title")))))
-      }
-    }
-    
-    vals_df = data.frame(matrix(unlist(vals), 
-                                nrow = length(vals)/2, byrow = T), #/2 bc 2 cols
-                         row.names = colnames(vals),
-                         stringsAsFactors = F) 
-    
-    colnames(vals_df) = c("accession", "desc")
-    vals_df
-    
-    sci_name  = sapply(vals_df$desc, function(x) get_spp(x), USE.NAMES = FALSE)
-    
-    vals_df %>%
-      mutate(organism = sci_name) %>% 
-      select(accession, organism) -> my_data
-    
-    my_data
+    tryCatch(
+      expr = {accessions_warning(protein_ids)}, 
+      error = function(e) {message("NCBI servers are busy. Please try again a bit later.")},
+      warning = function(w) {message("NCBI servers are busy. Please try again a bit later.")}
+    )
   }
-  
 }
-
 utils::globalVariables(c("accession", "organism"))

@@ -10,7 +10,6 @@
 #'
 #' @seealso \code{filterArch_ids}
 #'
-#' @importFrom rentrez entrez_summary
 #' @importFrom curl has_internet
 #'
 #' @return
@@ -21,8 +20,9 @@
 #' \dontshow{
 #' filtered_archids <- c("12034188", "12034184","12034182")
 #' getArch_labels(filtered_archids)}
+#' 
 #' \donttest{
-#' filtered_archids <- filterArch_ids(archs_ids, my_filter)
+#' filtered_archids <- c("12034188", "12034184")
 #' getArch_labels(filtered_archids)}
 #'
 #' @author Jose V. Die
@@ -33,13 +33,14 @@
 getArch_labels <-
 function(arch_ids) {
   
-  if(!curl::has_internet()) {
+  if(!has_internet()) {
     message("This function requires Internet connection.")
   } else {
-    for(id in arch_ids) {
-      my_label_sum = entrez_summary(db = "sparcle", id = id)
-      print(paste(id, my_label_sum$displabel))
-  }
+    tryCatch(
+      expr = {labels_warning(arch_ids)}, 
+      error = function(e) {message("NCBI servers are busy. Please try again a bit later.")},
+      warning = function(w) {message("NCBI servers are busy. Please try again a bit later.")}
+    )
 
       }
 

@@ -14,17 +14,12 @@
 #'   the sequences.
 #'
 #' @return
-#' all the architectures identifiers for each of the conserved domains.
+#' the architectures identifiers for each of the conserved domains.
 #'
 #' @examples 
-#' \dontshow{
 #' arf <- c("pfam06507")
-#' getArch_ids(arf)}
+#' getArch_ids(arf)
 #' 
-#' \donttest{
-#' arf <- c("pfam02362", "pfam06507", "pfam02309")
-#' getArch_ids(arf)}
-#'
 #' @author Jose V. Die
 #'
 #' @export
@@ -33,17 +28,14 @@
 getArch_ids <-
 function(gene_family) {
 
-  if(!curl::has_internet()) {
+  if(!has_internet()) {
     message("This function requires Internet connection.")
   } else {
-    cd <- vector(mode = "character")
     
-    for(i in seq_along(gene_family)) {
-      cd <- c(cd, getSparcleArchs(gene_family[i]) )
-    }
-    
-    unique(cd)
-    
-    
+    tryCatch(
+      expr    = {archids_warning(gene_family)}, 
+      error   = function(e) {message("NCBI servers are busy. Please try again a bit later.")},
+      warning = function(w) {message("NCBI servers are busy. Please try again a bit later.")}
+    )
   }
   }

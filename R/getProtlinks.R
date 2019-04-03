@@ -3,13 +3,13 @@
 #' Parse the RefSeq database and extract all the protein identifiers that
 #' have a given architecture.
 #'
+#' @importFrom rentrez entrez_link
+#' 
 #' @usage
 #' getProtlinks(archs_ids)
 #'
 #' @param archs_ids A string with the architecture identifiers
 #'   (SPARCLE database, NCBI)
-#'
-#' @importFrom rentrez entrez_link
 #'
 #' @author Jose V. Die
 

@@ -21,8 +21,9 @@ labels.
 \dontshow{
 filtered_archids <- c("12034188", "12034184","12034182")
 getArch_labels(filtered_archids)}
+
 \donttest{
-filtered_archids <- filterArch_ids(archs_ids, my_filter)
+filtered_archids <- c("12034188", "12034184")
 getArch_labels(filtered_archids)}
 
 }

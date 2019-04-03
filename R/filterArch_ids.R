@@ -12,8 +12,6 @@
 #'   (at least) for the proteins to have.
 #'
 #' @importFrom curl has_internet
-#' @importFrom rentrez entrez_summary
-#' @importFrom stringr str_count
 #'
 #' @return
 #' the architecture identifiers from all the potential protein architectures
@@ -41,27 +39,14 @@
 filterArch_ids <-
 function(archs_ids, filter) {
 
-  if(!curl::has_internet()) {
+  if(!has_internet()) {
     message("This function requires Internet connection.")
     } else {
+      tryCatch(
+        expr    = {filterarchids_warning(archs_ids, filter)}, 
+        error   = function(e) {message("NCBI servers are busy. Please try again a bit later.")},
+        warning = function(w) {message("NCBI servers are busy. Please try again a bit later.")}
+      )
       
-      my_labelsIds <- vector(mode = "character")
-    
-      for(id in archs_ids) {
-        sid = entrez_summary(db = "sparcle", id = id)
-    
-        # sanitty check: some sparcle ids do not give esummary. ex: "12217856"
-        # only if esummary:
-        if(length(sid) > 2) {
-    
-          # check label contains required CDs
-          if(sum(str_count(sid$displabel, filter)) == length(filter) ) {
-            my_labelsIds <- c(my_labelsIds, id)
-          }
-    
-          }
-    
-      }
-      my_labelsIds
       }
 }

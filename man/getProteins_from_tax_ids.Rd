@@ -20,8 +20,9 @@ Parse the RefSeq database using protein architecture identifiers (SPARCLE dabats
 and extract the protein ids. for the selected taxonomic species.
 }
 \examples{
-filtered_archids <- c("12034188", "12034184")
-getProteins_from_tax_ids(filtered_archids, legumesIds)
+filtered_archids <- c("12034184")
+medicago <- c(3880)
+getProteins_from_tax_ids(filtered_archids, medicago)
 
 }
 \author{

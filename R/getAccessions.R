@@ -28,8 +28,13 @@
 #' }
 #'  
 #' @examples 
+#' \dontshow{
+#' prot_ids <- c("1379669790")
+#' getAccessions(prot_ids)}
+#' 
+#' \dontrun{
 #' prot_ids <- c("593705262", "1379669790", "1150156484")
-#' getAccessions(prot_ids)
+#' getAccessions(prot_ids)}
 #'  
 #' @author Jose V. Die 
 #'  

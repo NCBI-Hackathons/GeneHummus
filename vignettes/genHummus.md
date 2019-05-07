@@ -11,7 +11,7 @@ Content
     -   species table
     -   XP accessions
 
-1.  [Customizing](#customizing-genehummus) `geneHummus`
+2.  [Customizing](#customizing-genehummus) `geneHummus`
 
 -   Brassicaceae
 -   Cucurbitaceae

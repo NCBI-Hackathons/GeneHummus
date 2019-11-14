@@ -79,10 +79,14 @@ We know from relevant literature that the last domain (AUX/IAA) in the
 canonical ARF protein structure may or may not be present. Therefore, at
 least two domains have to be present. In other words, we want to filter
 the SPARCLE architectures that contain, at least, those 2 domains (in
-that sequential order!). The function `filterArch_ids` will do the job :
+that sequential order!). Also, it is recommended to give the family name as second filter.   
+The function `filterArch_ids` will do the job :
 
     my_filter <- c("B3_DNA", "Auxin_resp")
-    filtered_archids <- filterArch_ids(archids, my_filter)
+    family_name = "auxin response factor" 
+    filtered_archids <- filterArch_ids(archids, my_filter, family_name)
+    
+
 
 #### Get SPARCLE labels
 

@@ -23,7 +23,7 @@ The lastest development version of the package can also be loaded directly from 
     
     
 ## Shiny app 
-See and downloand genomic info from our case study ([auxin response factor](genehummus.shinyapps.io/testshiny/)) and pick the ARFs in your favourite legume species.   
+See and downloand genomic info from our case study ([auxin response factor](shinyapps.io/testshiny/)) and pick the ARFs in your favourite legume species.   
   
 
 ## Publication

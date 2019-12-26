@@ -4,12 +4,13 @@
 #' least, those selected in the filter.
 #'
 #' @usage
-#' filterArch_ids(archs_ids, filter)
+#' filterArch_ids(archs_ids, filter, family_name)
 #'
 #' @param archs_ids A string with the architecture identifiers that contain,
 #' at least, one of the conserved domains defining the gene family.
 #' @param filter A string with the domains (and order) that are required
 #'   (at least) for the proteins to have.
+#' @param family_name A string with the family name as filter. 
 #'
 #' @importFrom curl has_internet
 #'
@@ -29,7 +30,8 @@
 #' \dontshow{
 #' archs_ids <- c("12034166", "12034151", "11279088")
 #' my_filter <- c("B3_DNA", "Auxin_resp")
-#' filterArch_ids(archs_ids, my_filter) }
+#' family_name <- "auxin response factor"
+#' filterArch_ids(archs_ids, my_filter, family_name) }
 #'
 #' @author Jose V. Die
 #'

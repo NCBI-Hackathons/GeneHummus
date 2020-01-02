@@ -40,7 +40,7 @@
 
 
 filterArch_ids <-
-function(archs_ids, filter, family_name <- "auxin response factor") {
+function(archs_ids, filter, family_name) {
 
   if(!has_internet()) {
     message("This function requires Internet connection.")

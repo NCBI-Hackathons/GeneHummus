@@ -24,8 +24,9 @@
 #' @examples \dontrun{
 #' archs_ids <- getArch_ids("pfam02362")
 #' my_filter <- c("B3_DNA", "Auxin_resp")
+#' family_name <- "auxin response factor"
 #' 
-#' filterArch_ids(archs_ids, my_filter) 
+#' filterArch_ids(archs_ids, my_filter, family_name) 
 #' }
 #' \dontshow{
 #' archs_ids <- c("12034166", "12034151", "11279088")
@@ -39,13 +40,13 @@
 
 
 filterArch_ids <-
-function(archs_ids, filter) {
+function(archs_ids, filter, family_name <- "auxin response factor") {
 
   if(!has_internet()) {
     message("This function requires Internet connection.")
     } else {
       tryCatch(
-        expr    = {filterarchids_warning(archs_ids, filter)}, 
+        expr    = {filterarchids_warning(archs_ids, filter, family_name)}, 
         error   = function(e) {message("NCBI servers are busy. Please try again a bit later.")},
         warning = function(w) {message("NCBI servers are busy. Please try again a bit later.")}
       )

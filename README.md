@@ -19,7 +19,7 @@ The lastest development version of the package can also be loaded directly from 
   
     library(devtools)
     install_github("NCBI-Hackathons/GeneHummus")
-    library(GeneHummus)
+    library(geneHummus)
     
 
 ## Development version

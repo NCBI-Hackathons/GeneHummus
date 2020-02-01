@@ -4,6 +4,7 @@ author: "Jose V Die"
 date: "28/2/2019"
 output: html_document
 ---
+> ![](https://www.r-pkg.org/badges/version/geneHummus) ![](http://cranlogs.r-pkg.org/badges/grand-total/geneHummus)   
 
 # geneHummus
 

@@ -28,13 +28,20 @@ filterarchids_warning <-
       if(length(sid) > 2) {
         
         # check if label contains required domains OR family name
-        if(sum(str_count(sid$displabel, filter)) == length(filter) |
-           sid$dispname == family_name) {
-          my_labelsIds <- c(my_labelsIds, id)
+        if(length(filter) > 1) {
+          if(sum(str_count(sid$displabel, filter)) == length(filter) |
+             sid$dispname == family_name) {
+            my_labelsIds <- c(my_labelsIds, id)
+          }
+        } else {
+          if(str_count(sid$displabel, filter) > 0  |
+             sid$dispname == family_name) {
+            my_labelsIds <- c(my_labelsIds, id)
+          }
         }
-        
       }
+      
     }
-    my_labelsIds  
-  }
+    my_labelsIds
+  } 
 
